@@ -1,0 +1,237 @@
+@font-face {
+    font-family: zelda;
+    src: url(./rsrc/HyliaSerifBeta-Regular.otf);
+  }
+
+body{
+    margin: auto;
+    font-family: zelda;
+    background-image: url("./img/backgroundZelda.jpg");
+    background-size: cover;
+}
+
+header{
+    display: flex;
+    height: 150px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: goldenrod;
+}
+
+header img {
+    height: 150px;
+    width: 300px;
+}
+.contenido {
+    display: flex;
+    
+    width: 1800px;
+    height: 775px;
+    
+}
+
+.left {
+    display: flex;
+    justify-content: flex-end;
+    width: 550px;
+    height: 100%;
+   
+}
+
+nav {
+    position: sticky;
+    top:0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 175px;
+    height: 300px;
+    
+    background-color: rgba(0, 0, 0, 0.6);
+
+}
+
+nav ul a {
+    padding: 0%;
+    list-style:none;
+    text-decoration: none;
+}
+
+nav ul li {
+    padding: 15px;
+    font-size: x-large;
+    color: goldenrod;
+}
+
+.centro {
+    width: 700px;
+    height: 100%;
+    background-color: rgba(184, 134, 11, 0.8);
+    padding-left: 10px;
+    padding-right: 10px;
+    
+    
+}
+
+.parrafo {
+    width: 100%;
+    display: flex;
+}
+
+.texto {
+    
+    flex-direction: column;
+    width: 400px;
+}
+
+.texto img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    float: right;
+}
+
+.enlaces {
+    width: 250px ;
+}
+
+.enlaces ul a {
+    padding: 0%;
+    list-style:none;
+    text-decoration: none;
+    font-size: large;
+    color:darkred ;
+
+}
+
+.enlaces ul li {
+    padding: 40px;
+}
+
+.enlaces h3 {
+    text-align: center;
+}
+
+.right {
+    position: sticky;
+    top: 0;
+    height: 400px;
+}
+
+.right h2 {
+    height: 40px;
+    margin: 0;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.galeria {
+    
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8);
+    grid-gap: 10px;
+    width: 550px;
+    height: 550px;
+    background-color: rgba(255, 255, 255,0.1);
+    grid-template-areas: 
+    "a a a a b b b b"
+    "a a a a b b b b"
+    "a a a a c c d d"
+    "a a a a c c d d"
+    "a a a a c c e e"
+    "f f f f c c e e"
+    "f f f f c c e e"
+    "f f f f c c e e" ;
+    
+}
+
+.grid-item-1 {
+    grid-area: a;
+    background-image: url("./img/link.png");
+    background-size:  100% 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    
+}
+
+.grid-item-2 {
+    grid-area: b;
+    background-image: url("./img/urbosa.png");
+    background-size: 100% 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.grid-item-3 {
+    grid-area: c;
+    background-image: url("./img/zelda.png");
+    background-size: 100% 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.grid-item-4 {
+    grid-area: d;
+    background-image: url("./img/revali.png");
+    background-size: 100% 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.grid-item-5 {
+    grid-area: e;
+    background-image: url("./img/mipha.png");
+    background-size: 100% 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.grid-item-6 {
+    grid-area: f;
+    background-image: url("./img/daruk.png");
+    background-size: 100% 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.links {
+    display: flex;
+    justify-content: space-around;
+    height: 250px;
+    
+}
+
+.caja {
+    margin: 10px;
+    padding: 10px;
+    width: 30%;
+    background-color: rgba(255, 255, 255, 0.6);
+    text-align: justify;
+}
+
+.mid {
+    list-style:none;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.bottom {
+    list-style:none;
+
+}
+
+.caja ul img{
+    
+    padding: 15px;
+    width: 50px;
+    height: 50px;
+}
+
+
+footer {
+    
+    background-color: black;
+    opacity: 0.6;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
