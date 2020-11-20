@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de estilos</title>
+
+    <style>
+        body {
+            background-image: url('greybackground.jpg');
+            background-size: cover;
+            }
+        
+        div {
+            width: 200px;
+            height: 200px;
+            margin: 1em;
+            display: inline-block;
+            vertical-align: top;
+            padding: 50px 50px;
+        }
+
+        .border1 {
+            border-radius: 15px 0px 15px 0px
+        }
+
+        .border2 {
+            border-radius: 0px 15px 0px 15px
+        }
+
+        .borderall {
+            border-radius: 15px 15px 15px 15px
+        }
+
+        .borderimage {
+              
+            background-color: black;
+            padding: 30px 5px;
+            margin: 1em;
+            display:inline-block;
+            vertical-align: top;
+
+            width: 250px;
+            height: 200px;
+            border: solid 20px transparent;
+            border-image: url('border-image.png') 40 round; 
+
+        }
+
+        .borderimage2 {
+              
+              background-color: black;
+              padding: 30px 5px;
+              margin: 1em;
+              display:inline-block;
+              vertical-align: top;
+  
+              width: 250px;
+              height: 200px;
+              border: solid 20px transparent;
+              border-image: url('border-image.png') 40 stretch; 
+  
+        }
+
+        .borderimage3 {
+              
+              background-color: black;
+              padding: 30px 5px;
+              margin: 1em;
+              display:inline-block;
+              vertical-align: top;
+  
+              width: 250px;
+              height: 200px;
+              border: solid 20px transparent;
+              border-image: url('border-image.png') 40 space; 
+  
+        }
+
+        .bggray {
+            background-color:gray;
+        }
+        .bgblack {
+            background-color: black;
+        }
+
+        .bgblackopdark {
+            background-color:  rgba(0,0,0,0.6)    
+        }
+
+        .bgblackoplight {
+            background-color:  rgba(0,0,0,0.3)    
+        }
+
+        .bgrainbow {
+            background-image: url('rainbow.jpg');
+        }
+
+        .bggradient {
+            background-image: radial-gradient(rgba(40,40,40) , lightgrey );
+        }
+        .textleft {
+            text-align: left;
+         }
+
+        .textright {
+            text-align: right;
+        }
+
+        .textcenter {
+            text-align: center;
+        }
+
+        .textjustify {
+            text-align: justify;
+        }
+
+        .textcolorwhite {
+            color: white;
+        }
+
+        .blackshadow {
+            box-shadow: 8px 8px 0px 0px black;
+        }
+
+        .blackline {
+            
+            border:  2px solid black;
+            border-style: solid;
+
+        }
+
+        .dotted {
+            border:  2px dotted black;
+            border-style: dotted;
+        }
+
+        .versa {
+            font-variant: small-caps;
+        }
+
+        .shadow1 {
+            box-shadow: 8px 8px 0px 0px rgba(0,0,0,0.7);
+        }
+
+        .shadow2 {
+            box-shadow: 8px 8px 0px 0px black;
+        }
+
+        .shadow2 {
+            box-shadow: 8px 8px 0px 0px black;
+        }
+    </style>
+</head>
+<body>
+    <div class= " textleft bggray border1"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p></div>    
+
+    <div class= " textright bggray border1"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p></div>    
+
+    <div class= " textcenter bggray border2"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p></div>   
+
+    <div class= " textjustify bggray border2"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p></div>    
+
+    <div class= " textjustify bggray borderall versa"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p></div>   
+
+    <div class= " textleft bggray blackshadow"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p></div>    
+
+    <div class= " textright bggray shadow1"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p></div>  
+
+    <div class= " textcenter bggray"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p></div> 
+
+    <div class= " textjustify bggray"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p></div>   
+
+    <div class= " textjustify bggray"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p></div>    
+
+    <div class= " textleft bggray borderimage"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p></div>   
+
+    <div class= " textright bggray borderimage2 "><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p></div> 
+
+    <div class= " textcenter bggray borderimage3"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p></div>    
+
+    <div class= " textjustify bggray blackline"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p></div>    
+
+    <div class= " textjustify bggray dotted"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p></div> 
+
+    <div class= " textleft bgblack textcolorwhite"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p></div> 
+
+    <div class= " textright bgblackopdark textcolorwhite"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p></div>    
+
+    <div class= " textcenter bgblackoplight textcolorwhite"><p class ="bgblackopdark">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p></div>  
+
+    <div class= " textjustify bggradient"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p></div>  
+
+    <div class= " textjustify bgrainbow"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p></div> 
+
+</body>
+</html>

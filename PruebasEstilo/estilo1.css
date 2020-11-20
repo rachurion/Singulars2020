@@ -1,0 +1,54 @@
+body {
+  background-color: bisque;
+  margin: auto;
+  width: 1000px;
+}
+
+.MainTitle {
+  text-align: right;
+}
+
+.ListContainer {
+  display: flex;
+  justify-content: right;
+}
+
+.Lista {
+  list-style: none;
+  display: inline-block;
+  width: 900px;
+  text-align: right;
+}
+
+.ListElem{
+  display: inline-block;
+  padding: 5px;
+  
+}
+
+.Fullbar {
+  background-color: brown;
+}
+
+.Inlinebar {
+  background-color: brown;
+
+}
+
+.Flex{
+  display: flex;
+}
+.Iblock {
+  display: inline-block;
+  
+}
+
+.ImageOne{
+  float: left;
+  margin: 10px;
+}
+
+.ImageTwo{
+  
+  margin: 20px;
+}

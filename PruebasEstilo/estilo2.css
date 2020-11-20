@@ -1,0 +1,54 @@
+body {
+  background-color: darkslategrey;
+  margin: auto;
+  width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
+}
+.MainTitle {
+  text-align: left;
+  text-transform: uppercase;
+  transform: rotate(-180deg);
+  
+}
+.ListContainer {
+  justify-content: right;
+}
+
+.Lista {
+  list-style: none;
+  width: 1000px;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid red;
+  
+}
+.ListElem{
+  display: inline-block;
+  padding: 5px;
+  
+}
+.Fullbar {
+  background-color: brown;
+  width: 100%;
+}
+.Inlinebar {
+  background-color: brown;
+
+}
+.Flex{
+  display: flex;
+}
+.Iblock {
+  display: inline-block; 
+}
+.ImageOne{
+  padding-left: 350px;
+  
+}
+.ImageTwo{
+  
+  margin: 20px;
+}

@@ -1,0 +1,45 @@
+body {
+  width: 1200px;
+  margin: auto;
+}
+
+.Lista {
+  list-style: none;
+  height: 500px; 
+}
+
+ul.Lista li {
+  padding: 10px;
+}
+
+.Menu {
+  flex-direction: column;
+}
+
+.Container {
+  display: flex;
+}
+.CornerImage {
+  padding: 30px ; 
+  border-bottom: 2px solid black;  
+}
+
+.Texto {
+  padding-left: 15px;
+  flex-direction: column;
+  border-left: 2px solid black;
+}
+
+a {
+  text-align: center;
+  color: aliceblue;
+  display: block;
+  background-color: purple;
+  height: 20px;
+  width: 80px;
+}
+
+a:hover {
+  transform: scale(1.2);
+
+}

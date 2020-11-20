@@ -1,0 +1,59 @@
+body {
+  background-color:burlywood;
+  margin: auto;
+  width: 1000px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.MainTitle {
+  text-align: center;
+  padding: 5px;
+  border: 2px solid black;
+}
+
+.ListContainer {
+  display: flex;
+  justify-content: left;
+}
+
+.Lista {
+  list-style: none;
+  display: inline-block;
+  width: 900px;
+  text-align: left;
+}
+
+.ListElem{
+  display: block;
+  padding: 5px;
+  
+}
+
+.Fullbar {
+  background-color: brown;
+  text-align: center;
+}
+
+.Inlinebar {
+  background-color: brown;
+  text-align: center;
+
+}
+
+.Flex{
+  display: flex;
+}
+.Iblock {
+  display: inline-block;
+  
+}
+
+.ImageOne{
+  float: right;
+  margin: 10px;
+}
+
+.ImageTwo{
+  display: inline-block;
+  
+}

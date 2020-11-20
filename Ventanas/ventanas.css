@@ -1,0 +1,67 @@
+.maxcontainer {
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.font0 {
+    font-size: 0;
+}
+
+.container {   
+    height: 350px;
+    width: 400px;
+}
+
+.inline {
+    display: inline-block; 
+}
+
+.flex {
+    display: flex;   
+}
+
+.column {
+    flex-direction: column;
+    text-align: center;
+}
+
+.fleft {
+    float: left;
+}
+
+.fright{
+    float: right;
+}
+
+.blue {   
+    height: 200px;
+    width:  300px;
+    background-color: blue;
+}
+
+.red{
+    height: 50px;
+    width: 300px;
+    background-color: red;
+}
+
+.green { 
+    height: 50px;
+    width: 300px;
+    background-color: green;
+}
+
+.yellow {   
+    height: 300px;
+    width: 50px;
+    background-color: yellow;
+}
+
+.purple {
+    height: 300px;
+    width: 50px;
+    background-color: purple;
+}
+
+

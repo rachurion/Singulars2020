@@ -1,0 +1,159 @@
+
+body {
+  background-color:rgb(51, 51, 51);
+  margin: auto;
+
+}
+
+a {
+  margin: 0;
+  color:rgb(140, 138, 140) ;
+}
+
+.white {
+  color : white;
+}
+
+.aqua {
+  color: rgb(30, 127, 108);
+  padding-bottom: 10px;
+}
+
+.grey {
+  color: rgb(66, 65, 65) ;
+}
+
+
+.topul {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+.topli {
+  display: inline-block;
+  padding: 15px 40px;
+  color: white;
+  
+}
+
+.bottomul{
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.bottomli{
+
+  padding-bottom: 15px;
+
+}
+
+.iconul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  
+
+}
+.iconli {
+  margin: 0;
+  width: 10%;
+  float: left;
+  padding-right: 30px;
+  padding-bottom: 15px ;
+}
+
+h1{
+  text-transform: uppercase;
+}
+.Nav {
+  height: 50px;
+  background-color:rgb(30, 127, 108);
+  opacity:0.8 ;
+  position: sticky;
+  top: 0;
+  
+}
+
+.Header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height:250px ;
+  background-color:rgb(51, 51, 51);
+  color: white;
+
+}
+
+.Banner {
+  height:300px ;
+  background-image: url("./img/Grass-Banner.jpg");
+  background-size:cover;
+}
+
+.Contenido {
+  display: flex;
+  justify-content: center;
+  height:400px ;
+  background-color: white;
+  
+}
+
+.ContContainer {
+  /* width: 800px; */
+  display: flex;
+  justify-content: center;
+}
+
+.ContLeft {
+  /* width: 75%; */
+  width: 600px;
+  text-align: justify;
+  padding-right: 20px;
+}
+
+.ContRight {
+  /* width: 25%; */
+  width: 200px;
+}
+
+.Links {
+  display: flex;
+  justify-content: center;
+  height:350px ;
+  background-color:rgb(51, 51, 51);
+}
+
+.LinkContainer {
+  /* width: 800px; */
+  display: flex;
+  justify-content: center;
+}
+
+.LinkLeft{
+  /* width: 37.5%; */
+  width: 300px;
+}
+
+.LinkCenter {
+  /* width: 37.5%; */
+  width: 300px;
+}
+
+.LinkRight {
+  /* width: 25%; */
+  width: 200px;
+}
+
+.Footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  background-color:rgb(22, 160, 133);
+  color: white;
+
+}
