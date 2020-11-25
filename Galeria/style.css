@@ -24,19 +24,14 @@ header img {
     width: 300px;
 }
 .contenido {
-    display: flex;
-    
-    width: 1800px;
-    height: 775px;
-    
+    display: flex; 
+    width: 1800px;   
 }
 
 .left {
     display: flex;
     justify-content: flex-end;
-    width: 550px;
-    height: 100%;
-   
+    width: 550px;  
 }
 
 nav {
@@ -47,9 +42,7 @@ nav {
     align-items: flex-start;
     width: 175px;
     height: 300px;
-    
     background-color: rgba(0, 0, 0, 0.6);
-
 }
 
 nav ul a {
@@ -66,12 +59,9 @@ nav ul li {
 
 .centro {
     width: 700px;
-    height: 100%;
     background-color: rgba(184, 134, 11, 0.8);
     padding-left: 10px;
-    padding-right: 10px;
-    
-    
+    padding-right: 10px;   
 }
 
 .parrafo {
@@ -102,7 +92,6 @@ nav ul li {
     text-decoration: none;
     font-size: large;
     color:darkred ;
-
 }
 
 .enlaces ul li {
@@ -126,8 +115,7 @@ nav ul li {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-.galeria {
-    
+.galeria {   
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(8);
@@ -143,16 +131,14 @@ nav ul li {
     "a a a a c c e e"
     "f f f f c c e e"
     "f f f f c c e e"
-    "f f f f c c e e" ;
-    
+    "f f f f c c e e" ;  
 }
 
 .grid-item-1 {
     grid-area: a;
     background-image: url("./img/link.png");
     background-size:  100% 100%;
-    background-color: rgba(0, 0, 0, 0.3);
-    
+    background-color: rgba(0, 0, 0, 0.3);   
 }
 
 .grid-item-2 {
@@ -191,16 +177,18 @@ nav ul li {
 }
 
 .links {
+    margin: auto;
     display: flex;
     justify-content: space-around;
     height: 250px;
-    
+    width: 1800px;
+    background-color: black;  
 }
 
 .caja {
     margin: 10px;
     padding: 10px;
-    width: 30%;
+    width: 400px;
     background-color: rgba(255, 255, 255, 0.6);
     text-align: justify;
 }
@@ -209,24 +197,19 @@ nav ul li {
     list-style:none;
     display: flex;
     flex-wrap: wrap;
-
 }
 
 .bottom {
     list-style:none;
-
 }
 
-.caja ul img{
-    
-    padding: 15px;
-    width: 50px;
-    height: 50px;
+.caja ul img{  
+    padding: 7px;
+    width: 40px;
+    height: 40px;
 }
 
-
-footer {
-    
+footer {   
     background-color: black;
     opacity: 0.6;
     height: 50px;
