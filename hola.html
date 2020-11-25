@@ -5,113 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <style>
-        .gone {
-            display: none;
-        }
+    <style> 
 
-        .press:hover .gone {
-            display: block;
-        }
-
-        .container {
+        .containermax {
             display: flex;
             flex-wrap: wrap;
-            margin: auto;
-            width: 1000px;
-            height: 800px;
-            justify-content: center;
-            align-items: center;
         }
 
-        .container1 {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            
-        }
+       .prueba {
+           position: relative;
+           transition: 1s;
+           top:0;
+           left: 0;
+           width: 300px;
+           height: 300px;
+           background-color: blue;
+           z-index: 1;
+       }
+
+       .check1:checked .prueba { 
+           top: 50px;
+           left: 50px;
+           background-color: red;
+           z-index: 0;
+       }
 
 
-        .top {
-          
-            position: absolute;
-            z-index: 1;
-           
-        }
 
-        .bottom:hover {
-             
-            position: relative;
-            z-index: 2;
-        }
-      
-        .square:hover {
-            
-            filter: brightness(40%);
-
-        }
-
-        .square {
-            display: flex;
-        }
-
-        p {
-            display: none;
-            position: absolute; 
-        }
-     
-        .square:hover + p{
-            
-            display: flex;
-            color:white;
-            z-index: 2;
-        }
     </style>
 </head>
 <body>
-    
-    <!-- Ejemplo hover y display none -->
-
-    <!-- <div class="press">
-        <p>No tocar</p>
-        <div class="gone"><img src='http://placekitten.com/400/300' alt=''/></div>
-    </div> -->
-
-    <!-- Ejemplo hover y z-index
-
-    <div class="container">
-        
-        <div class="bottom"><img src='http://placekitten.com/g/500/400' alt=''/></div>
-        <div class="bottom"><img src='http://placekitten.com/g/500/400' alt=''/></div>
-        <div class="bottom"><img src='http://placekitten.com/g/500/400' alt=''/></div>
-        <div class="bottom"><img src='http://placekitten.com/g/500/400' alt=''/></div>
-        <div class="top"><img src='http://placekitten.com/g/300/300' alt=''/></div>
-    </div> -->
-
-
-    <div class="container">
-        
-        <div class="container1"> 
-            <div class="square"><img src='http://placekitten.com/g/500/400' alt=''/></div>
-            <p>Texto invisble</p>
+    <div class="containermax">
+        <form class="check1">
+            <input type="checkbox" checked="checked">
+        </form>
+        <div class="prueba">
+            <p>hola</p>
         </div>
-        <div class="container1"> 
-            <div class="square"><img src='http://lorempixel.com/500/400/animals' alt=''/></div>
-            <p>Texto invisble</p>
-        </div>
-        <div class="container1">
-            <div class="square"><img src='http://lorempixel.com/g/500/400/animals' alt=''/></div>
-            <p>Texto invisble</p>
-        </div>
-        <div class="container1"> 
-            <div class="square"><img src='http://placekitten.com/500/400' alt=''/></div>
-            <p>Texto invisble</p>
-        </div>
-        
-    </div> 
 
 
+        </div>
+
+  
+
+    </div>
+
+
+  
 </body>
 </html>
 

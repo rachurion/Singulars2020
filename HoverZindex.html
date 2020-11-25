@@ -28,28 +28,27 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            align-items: center;
+            align-items: center;  
             
         }
-
-
-        .top {
-          
-            position: absolute;
-            z-index: 1;
-           
+        
+        .square {
+            transition: 5s; 
         }
 
-        .bottom:hover {
-             
+        .top {  
+            position: absolute;
+            z-index: 1;      
+        }
+
+        .bottom:hover {     
             position: relative;
             z-index: 2;
         }
       
-        .square:hover {
-            
+        .square:hover {     
             filter: brightness(40%);
-
+            transition: 1s;
         }
 
         .square {
@@ -61,8 +60,7 @@
             position: absolute; 
         }
      
-        .square:hover + p{
-            
+        .square:hover + p{     
             display: flex;
             color:white;
             z-index: 2;

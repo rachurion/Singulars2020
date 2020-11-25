@@ -39,20 +39,20 @@ nav {
     top:0;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     width: 175px;
-    height: 300px;
+    height: 600px;
     background-color: rgba(0, 0, 0, 0.6);
 }
 
 nav ul a {
-    padding: 0%;
     list-style:none;
     text-decoration: none;
 }
 
 nav ul li {
-    padding: 15px;
+    margin: 20px;
+    padding: 35px;
     font-size: x-large;
     color: goldenrod;
 }
@@ -105,11 +105,11 @@ nav ul li {
 .right {
     position: sticky;
     top: 0;
-    height: 400px;
+    height: 100%;
 }
 
 .right h2 {
-    height: 40px;
+    height: 50px;
     margin: 0;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.2);
@@ -177,10 +177,9 @@ nav ul li {
 }
 
 .links {
-    margin: auto;
+    margin: 20px auto 0px;
     display: flex;
     justify-content: space-around;
-    height: 250px;
     width: 1800px;
     background-color: black;  
 }
@@ -206,12 +205,11 @@ nav ul li {
 .caja ul img{  
     padding: 7px;
     width: 40px;
-    height: 40px;
+    
 }
 
 footer {   
-    background-color: black;
-    opacity: 0.6;
+    background-color: rgba(0, 0, 0, 0.6);
     height: 50px;
     display: flex;
     justify-content: center;
