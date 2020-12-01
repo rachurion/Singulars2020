@@ -1,0 +1,47 @@
+.center {
+    text-align: center;
+}
+
+.just {
+    text-align: justify;
+}
+
+.screen {
+    width: 480px;
+    margin: auto;
+    border: 3px solid black;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    background-color: yellow;    
+}
+
+header img {
+    width: 75px;
+    height: 75px;  
+}
+
+.navmenu{
+    padding: 0;
+    text-align: center;
+    list-style: none;
+    background-color: orange;
+}
+
+main {
+    background-color: lightcoral;
+}
+
+.box img {
+    background-color: green;
+    width:480px ;
+    height: 200px;
+}
+
+footer{
+    background-color: palevioletred;
+    height: 25px;
+}
