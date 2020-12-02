@@ -10,8 +10,7 @@ body{
 
 .header {
     height: 75px;
-    background-color:rgb(71, 71, 71);
-    opacity:0.4 ;
+    background-color:rgba(71, 71, 71,0.4);
     position: sticky;
     top: 0;
 }
