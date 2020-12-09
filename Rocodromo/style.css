@@ -1,0 +1,12 @@
+@font-face {
+  font-family: poppins;
+  src: url(./rsrc/Poppins-Regular.ttf);
+}
+body {
+  font-family: poppins;
+  background-color: #16161a;
+}
+
+nav {
+  background-color:#94a1b2;
+}
