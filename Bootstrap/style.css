@@ -1,0 +1,40 @@
+body {
+    background-color: #ECCDE8;
+}
+
+.right-bar {
+    height: 100%;
+}
+
+.tiny-img {
+    width: 100%;
+    height: 250px;
+    
+}
+
+
+.vkitty {
+    width: 450px;
+    height: 300px;
+}
+
+.light-purple {
+    background-color: #cca0c6;
+}
+
+.purple {
+    background-color: #ab77af;
+}
+
+.dark-purple {
+    background-color: #87619b; 
+}
+
+.sticky-height {
+    height: 100%;
+}
+
+footer {
+    height:50px;
+}
+
