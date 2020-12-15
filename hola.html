@@ -4,52 +4,236 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/7039058a7b.js" crossorigin="anonymous"></script>
 
     <style> 
 
-        .containermax {
-            display: flex;
-            flex-wrap: wrap;
-        }
+    body {
+        background-color: lightblue;
+    }
 
-       .prueba {
-           position: relative;
-           transition: 1s;
-           top:0;
-           left: 0;
-           width: 300px;
-           height: 300px;
-           background-color: blue;
-           z-index: 1;
-       }
+    main {
+        background-color: lightcoral;
+    }
 
-       .check1:checked .prueba { 
-           top: 50px;
-           left: 50px;
-           background-color: red;
-           z-index: 0;
-       }
+    .ingredientes {
+        transition: 1s;
+        position: relative;
+        
+        height: 300px;
+        transform: translateY(300px) ;
+        background-color: whitesmoke;
+       
+        
+    }
+    .img-cuadro {
+          margin: 5px;
+          position: relative;
+    
+          height: 300px;
+          border: solid 1px black;
+          transition: 1s;
+          background-image: url("https://images.immediate.co.uk/production/volatile/sites/30/2020/08/triple-chocolate-peanut-butter-layer-cake-2-06eee24.jpg?quality=90&resize=500%2C454");
+          background-repeat: no-repeat;
+          
+          
+      }
+
+    .button {
+        height: 50px;
+        border: solid 1px black
+    }
+  
+    .animate:hover + .img-parent > .img-cuadro > .ingredientes{
+        
+        transform: translateY(0px);
+    }
 
 
 
     </style>
 </head>
-<body>
-    <div class="containermax">
-        <form class="check1">
-            <input type="checkbox" checked="checked">
-        </form>
-        <div class="prueba">
-            <p>hola</p>
+<body class="">
+    <main class="col-10 d-flex flex-wrap justify-center mx-auto">
+
+        <div class="container col-4 d-flex flex-wrap">
+
+            <div class="button col-6 order-3">
+                Boton
+            </div>
+            <div class="col-12 order-4 d-flex justify-center">
+                <div class="col-6 mx-auto button">
+                    Boton
+                </div>
+            </div>
+
+            <div class="animate col-6 button order-2">
+                Boton
+            </div>
+
+            <div class="col-12 img-parent order-1 no-gutters">
+                <div class="col-12  img-cuadro overflow-hidden d-flex justify-center">
+                    <div class=" col-12 ingredientes overflow-auto" id="animation">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </br>
+                            Earum id atque placeat nesciunt voluptatem voluptatibus saepe tempora minus
+                            </br> velit tenetur rerum, obcaecati magnam veniam nihil quod illo ea? 
+                        </br>Vitae rerum perspiciatis placeat tempore consequatur minima aliquid 
+                        </br>laudantium possimus odio fugit.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam itaque eos, quo dolorem fuga aut eligendi est animi in voluptate, quibusdam adipisci repellat neque, deserunt repudiandae minima quisquam perferendis? Unde tempora nam at dolorum aliquid vitae itaque dolorem, ea cupiditate quibusdam incidunt optio dolore illo perspiciatis veritatis libero eius autem possimus quia rem aspernatur. Dolorum dolorem aliquid non voluptate soluta rem, fuga laboriosam architecto consectetur, dolor, eum cupiditate commodi in! Culpa suscipit molestiae quasi fuga perferendis doloribus iste nisi modi magni corporis. Assumenda ab minus rem nam, laboriosam ratione debitis quam, voluptates molestias iste qui iusto, odit nisi? Deserunt debitis accusantium voluptate. Nostrum distinctio, laboriosam voluptatibus perferendis voluptates ea! Autem voluptates architecto quis, debitis doloribus non repellendus quaerat eum saepe at earum libero dolores veniam quae maiores vel corporis nobis doloremque sequi error placeat, minima sint vitae magnam. Suscipit consequuntur sint ullam natus unde aliquid, aperiam magnam quo expedita laudantium ad commodi quaerat dolorum beatae possimus similique ipsum saepe id. Dolor assumenda a, porro sequi recusandae officia harum voluptatem nulla. Quas omnis vero esse! Aliquid ipsa natus obcaecati numquam quam necessitatibus cum ullam consequatur fuga. Vitae libero voluptatibus consectetur corrupti hic culpa quibusdam quasi cum provident! Cumque perspiciatis nisi officia voluptates eligendi aut hic accusamus, officiis natus repellat labore! Nobis, commodi? Optio in magnam sit dolorem ad at recusandae ea cum aperiam assumenda id iure, incidunt aspernatur aliquid architecto libero quisquam quo corporis soluta eligendi! Harum illum repudiandae amet vel natus inventore doloremque fugit, dicta modi fugiat. Molestias accusantium soluta reiciendis nobis rem ipsam accusamus consequatur rerum, possimus, hic eum repellat voluptas animi beatae quaerat excepturi eligendi dolore libero. Ducimus explicabo voluptate nostrum dolore maxime architecto rerum aliquid aspernatur dolorem corporis repellat quasi, sunt in minima vero hic molestiae assumenda laudantium, repellendus modi? Dolorum quos at excepturi consectetur, quaerat provident!</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
+        <div class="container col-4 d-flex flex-wrap">
 
+            <div class="button col-6 order-3">
+                Boton
+            </div>
+            <div class="col-12 order-4 d-flex justify-center">
+                <div class="col-6 mx-auto button">
+                    Boton
+                </div>
+            </div>
+
+            <div class="animate col-6 button order-2">
+                Boton
+            </div>
+
+            <div class="col-12 img-parent order-1 no-gutters">
+                <div class="col-12  img-cuadro overflow-hidden d-flex justify-center">
+                    <div class=" col-12 ingredientes overflow-auto" id="animation">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </br>
+                            Earum id atque placeat nesciunt voluptatem voluptatibus saepe tempora minus
+                            </br> velit tenetur rerum, obcaecati magnam veniam nihil quod illo ea? 
+                        </br>Vitae rerum perspiciatis placeat tempore consequatur minima aliquid 
+                        </br>laudantium possimus odio fugit.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam itaque eos, quo dolorem fuga aut eligendi est animi in voluptate, quibusdam adipisci repellat neque, deserunt repudiandae minima quisquam perferendis? Unde tempora nam at dolorum aliquid vitae itaque dolorem, ea cupiditate quibusdam incidunt optio dolore illo perspiciatis veritatis libero eius autem possimus quia rem aspernatur. Dolorum dolorem aliquid non voluptate soluta rem, fuga laboriosam architecto consectetur, dolor, eum cupiditate commodi in! Culpa suscipit molestiae quasi fuga perferendis doloribus iste nisi modi magni corporis. Assumenda ab minus rem nam, laboriosam ratione debitis quam, voluptates molestias iste qui iusto, odit nisi? Deserunt debitis accusantium voluptate. Nostrum distinctio, laboriosam voluptatibus perferendis voluptates ea! Autem voluptates architecto quis, debitis doloribus non repellendus quaerat eum saepe at earum libero dolores veniam quae maiores vel corporis nobis doloremque sequi error placeat, minima sint vitae magnam. Suscipit consequuntur sint ullam natus unde aliquid, aperiam magnam quo expedita laudantium ad commodi quaerat dolorum beatae possimus similique ipsum saepe id. Dolor assumenda a, porro sequi recusandae officia harum voluptatem nulla. Quas omnis vero esse! Aliquid ipsa natus obcaecati numquam quam necessitatibus cum ullam consequatur fuga. Vitae libero voluptatibus consectetur corrupti hic culpa quibusdam quasi cum provident! Cumque perspiciatis nisi officia voluptates eligendi aut hic accusamus, officiis natus repellat labore! Nobis, commodi? Optio in magnam sit dolorem ad at recusandae ea cum aperiam assumenda id iure, incidunt aspernatur aliquid architecto libero quisquam quo corporis soluta eligendi! Harum illum repudiandae amet vel natus inventore doloremque fugit, dicta modi fugiat. Molestias accusantium soluta reiciendis nobis rem ipsam accusamus consequatur rerum, possimus, hic eum repellat voluptas animi beatae quaerat excepturi eligendi dolore libero. Ducimus explicabo voluptate nostrum dolore maxime architecto rerum aliquid aspernatur dolorem corporis repellat quasi, sunt in minima vero hic molestiae assumenda laudantium, repellendus modi? Dolorum quos at excepturi consectetur, quaerat provident!</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
-  
+        <div class="container col-4 d-flex flex-wrap">
 
-    </div>
+            <div class="button col-6 order-3">
+                Boton
+            </div>
+            <div class="col-12 order-4 d-flex justify-center">
+                <div class="col-6 mx-auto button">
+                    Boton
+                </div>
+            </div>
 
+            <div class="animate col-6 button order-2">
+                Boton
+            </div>
+
+            <div class="col-12 img-parent order-1 no-gutters">
+                <div class="col-12  img-cuadro overflow-hidden d-flex justify-center">
+                    <div class=" col-12 ingredientes overflow-auto" id="animation">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </br>
+                            Earum id atque placeat nesciunt voluptatem voluptatibus saepe tempora minus
+                            </br> velit tenetur rerum, obcaecati magnam veniam nihil quod illo ea? 
+                        </br>Vitae rerum perspiciatis placeat tempore consequatur minima aliquid 
+                        </br>laudantium possimus odio fugit.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam itaque eos, quo dolorem fuga aut eligendi est animi in voluptate, quibusdam adipisci repellat neque, deserunt repudiandae minima quisquam perferendis? Unde tempora nam at dolorum aliquid vitae itaque dolorem, ea cupiditate quibusdam incidunt optio dolore illo perspiciatis veritatis libero eius autem possimus quia rem aspernatur. Dolorum dolorem aliquid non voluptate soluta rem, fuga laboriosam architecto consectetur, dolor, eum cupiditate commodi in! Culpa suscipit molestiae quasi fuga perferendis doloribus iste nisi modi magni corporis. Assumenda ab minus rem nam, laboriosam ratione debitis quam, voluptates molestias iste qui iusto, odit nisi? Deserunt debitis accusantium voluptate. Nostrum distinctio, laboriosam voluptatibus perferendis voluptates ea! Autem voluptates architecto quis, debitis doloribus non repellendus quaerat eum saepe at earum libero dolores veniam quae maiores vel corporis nobis doloremque sequi error placeat, minima sint vitae magnam. Suscipit consequuntur sint ullam natus unde aliquid, aperiam magnam quo expedita laudantium ad commodi quaerat dolorum beatae possimus similique ipsum saepe id. Dolor assumenda a, porro sequi recusandae officia harum voluptatem nulla. Quas omnis vero esse! Aliquid ipsa natus obcaecati numquam quam necessitatibus cum ullam consequatur fuga. Vitae libero voluptatibus consectetur corrupti hic culpa quibusdam quasi cum provident! Cumque perspiciatis nisi officia voluptates eligendi aut hic accusamus, officiis natus repellat labore! Nobis, commodi? Optio in magnam sit dolorem ad at recusandae ea cum aperiam assumenda id iure, incidunt aspernatur aliquid architecto libero quisquam quo corporis soluta eligendi! Harum illum repudiandae amet vel natus inventore doloremque fugit, dicta modi fugiat. Molestias accusantium soluta reiciendis nobis rem ipsam accusamus consequatur rerum, possimus, hic eum repellat voluptas animi beatae quaerat excepturi eligendi dolore libero. Ducimus explicabo voluptate nostrum dolore maxime architecto rerum aliquid aspernatur dolorem corporis repellat quasi, sunt in minima vero hic molestiae assumenda laudantium, repellendus modi? Dolorum quos at excepturi consectetur, quaerat provident!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container col-4 d-flex flex-wrap">
+
+            <div class="button col-6 order-3">
+                Boton
+            </div>
+            <div class="col-12 order-4 d-flex justify-center">
+                <div class="col-6 mx-auto button">
+                    Boton
+                </div>
+            </div>
+
+            <div class="animate col-6 button order-2">
+                Boton
+            </div>
+
+            <div class="col-12 img-parent order-1 no-gutters">
+                <div class="col-12  img-cuadro overflow-hidden d-flex justify-center">
+                    <div class=" col-12 ingredientes overflow-auto" id="animation">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </br>
+                            Earum id atque placeat nesciunt voluptatem voluptatibus saepe tempora minus
+                            </br> velit tenetur rerum, obcaecati magnam veniam nihil quod illo ea? 
+                        </br>Vitae rerum perspiciatis placeat tempore consequatur minima aliquid 
+                        </br>laudantium possimus odio fugit.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam itaque eos, quo dolorem fuga aut eligendi est animi in voluptate, quibusdam adipisci repellat neque, deserunt repudiandae minima quisquam perferendis? Unde tempora nam at dolorum aliquid vitae itaque dolorem, ea cupiditate quibusdam incidunt optio dolore illo perspiciatis veritatis libero eius autem possimus quia rem aspernatur. Dolorum dolorem aliquid non voluptate soluta rem, fuga laboriosam architecto consectetur, dolor, eum cupiditate commodi in! Culpa suscipit molestiae quasi fuga perferendis doloribus iste nisi modi magni corporis. Assumenda ab minus rem nam, laboriosam ratione debitis quam, voluptates molestias iste qui iusto, odit nisi? Deserunt debitis accusantium voluptate. Nostrum distinctio, laboriosam voluptatibus perferendis voluptates ea! Autem voluptates architecto quis, debitis doloribus non repellendus quaerat eum saepe at earum libero dolores veniam quae maiores vel corporis nobis doloremque sequi error placeat, minima sint vitae magnam. Suscipit consequuntur sint ullam natus unde aliquid, aperiam magnam quo expedita laudantium ad commodi quaerat dolorum beatae possimus similique ipsum saepe id. Dolor assumenda a, porro sequi recusandae officia harum voluptatem nulla. Quas omnis vero esse! Aliquid ipsa natus obcaecati numquam quam necessitatibus cum ullam consequatur fuga. Vitae libero voluptatibus consectetur corrupti hic culpa quibusdam quasi cum provident! Cumque perspiciatis nisi officia voluptates eligendi aut hic accusamus, officiis natus repellat labore! Nobis, commodi? Optio in magnam sit dolorem ad at recusandae ea cum aperiam assumenda id iure, incidunt aspernatur aliquid architecto libero quisquam quo corporis soluta eligendi! Harum illum repudiandae amet vel natus inventore doloremque fugit, dicta modi fugiat. Molestias accusantium soluta reiciendis nobis rem ipsam accusamus consequatur rerum, possimus, hic eum repellat voluptas animi beatae quaerat excepturi eligendi dolore libero. Ducimus explicabo voluptate nostrum dolore maxime architecto rerum aliquid aspernatur dolorem corporis repellat quasi, sunt in minima vero hic molestiae assumenda laudantium, repellendus modi? Dolorum quos at excepturi consectetur, quaerat provident!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container col-4 d-flex flex-wrap">
+
+            <div class="button col-6 order-3">
+                Boton
+            </div>
+            <div class="col-12 order-4 d-flex justify-center">
+                <div class="col-6 mx-auto button">
+                    Boton
+                </div>
+            </div>
+
+            <div class="animate col-6 button order-2">
+                Boton
+            </div>
+
+            <div class="col-12 img-parent order-1 no-gutters">
+                <div class="col-12  img-cuadro overflow-hidden d-flex justify-center">
+                    <div class=" col-12 ingredientes overflow-auto" id="animation">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </br>
+                            Earum id atque placeat nesciunt voluptatem voluptatibus saepe tempora minus
+                            </br> velit tenetur rerum, obcaecati magnam veniam nihil quod illo ea? 
+                        </br>Vitae rerum perspiciatis placeat tempore consequatur minima aliquid 
+                        </br>laudantium possimus odio fugit.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam itaque eos, quo dolorem fuga aut eligendi est animi in voluptate, quibusdam adipisci repellat neque, deserunt repudiandae minima quisquam perferendis? Unde tempora nam at dolorum aliquid vitae itaque dolorem, ea cupiditate quibusdam incidunt optio dolore illo perspiciatis veritatis libero eius autem possimus quia rem aspernatur. Dolorum dolorem aliquid non voluptate soluta rem, fuga laboriosam architecto consectetur, dolor, eum cupiditate commodi in! Culpa suscipit molestiae quasi fuga perferendis doloribus iste nisi modi magni corporis. Assumenda ab minus rem nam, laboriosam ratione debitis quam, voluptates molestias iste qui iusto, odit nisi? Deserunt debitis accusantium voluptate. Nostrum distinctio, laboriosam voluptatibus perferendis voluptates ea! Autem voluptates architecto quis, debitis doloribus non repellendus quaerat eum saepe at earum libero dolores veniam quae maiores vel corporis nobis doloremque sequi error placeat, minima sint vitae magnam. Suscipit consequuntur sint ullam natus unde aliquid, aperiam magnam quo expedita laudantium ad commodi quaerat dolorum beatae possimus similique ipsum saepe id. Dolor assumenda a, porro sequi recusandae officia harum voluptatem nulla. Quas omnis vero esse! Aliquid ipsa natus obcaecati numquam quam necessitatibus cum ullam consequatur fuga. Vitae libero voluptatibus consectetur corrupti hic culpa quibusdam quasi cum provident! Cumque perspiciatis nisi officia voluptates eligendi aut hic accusamus, officiis natus repellat labore! Nobis, commodi? Optio in magnam sit dolorem ad at recusandae ea cum aperiam assumenda id iure, incidunt aspernatur aliquid architecto libero quisquam quo corporis soluta eligendi! Harum illum repudiandae amet vel natus inventore doloremque fugit, dicta modi fugiat. Molestias accusantium soluta reiciendis nobis rem ipsam accusamus consequatur rerum, possimus, hic eum repellat voluptas animi beatae quaerat excepturi eligendi dolore libero. Ducimus explicabo voluptate nostrum dolore maxime architecto rerum aliquid aspernatur dolorem corporis repellat quasi, sunt in minima vero hic molestiae assumenda laudantium, repellendus modi? Dolorum quos at excepturi consectetur, quaerat provident!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container col-4 d-flex flex-wrap">
+
+            <div class="button col-6 order-3">
+                Boton
+            </div>
+            <div class="col-12 order-4 d-flex justify-center">
+                <div class="col-6 mx-auto button">
+                    Boton
+                </div>
+            </div>
+
+            <div class="animate col-6 button order-2">
+                Boton
+            </div>
+
+            <div class="col-12 img-parent order-1 no-gutters">
+                <div class="col-12  img-cuadro overflow-hidden d-flex justify-center">
+                    <div class=" col-12 ingredientes overflow-auto" id="animation">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </br>
+                            Earum id atque placeat nesciunt voluptatem voluptatibus saepe tempora minus
+                            </br> velit tenetur rerum, obcaecati magnam veniam nihil quod illo ea? 
+                        </br>Vitae rerum perspiciatis placeat tempore consequatur minima aliquid 
+                        </br>laudantium possimus odio fugit.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam itaque eos, quo dolorem fuga aut eligendi est animi in voluptate, quibusdam adipisci repellat neque, deserunt repudiandae minima quisquam perferendis? Unde tempora nam at dolorum aliquid vitae itaque dolorem, ea cupiditate quibusdam incidunt optio dolore illo perspiciatis veritatis libero eius autem possimus quia rem aspernatur. Dolorum dolorem aliquid non voluptate soluta rem, fuga laboriosam architecto consectetur, dolor, eum cupiditate commodi in! Culpa suscipit molestiae quasi fuga perferendis doloribus iste nisi modi magni corporis. Assumenda ab minus rem nam, laboriosam ratione debitis quam, voluptates molestias iste qui iusto, odit nisi? Deserunt debitis accusantium voluptate. Nostrum distinctio, laboriosam voluptatibus perferendis voluptates ea! Autem voluptates architecto quis, debitis doloribus non repellendus quaerat eum saepe at earum libero dolores veniam quae maiores vel corporis nobis doloremque sequi error placeat, minima sint vitae magnam. Suscipit consequuntur sint ullam natus unde aliquid, aperiam magnam quo expedita laudantium ad commodi quaerat dolorum beatae possimus similique ipsum saepe id. Dolor assumenda a, porro sequi recusandae officia harum voluptatem nulla. Quas omnis vero esse! Aliquid ipsa natus obcaecati numquam quam necessitatibus cum ullam consequatur fuga. Vitae libero voluptatibus consectetur corrupti hic culpa quibusdam quasi cum provident! Cumque perspiciatis nisi officia voluptates eligendi aut hic accusamus, officiis natus repellat labore! Nobis, commodi? Optio in magnam sit dolorem ad at recusandae ea cum aperiam assumenda id iure, incidunt aspernatur aliquid architecto libero quisquam quo corporis soluta eligendi! Harum illum repudiandae amet vel natus inventore doloremque fugit, dicta modi fugiat. Molestias accusantium soluta reiciendis nobis rem ipsam accusamus consequatur rerum, possimus, hic eum repellat voluptas animi beatae quaerat excepturi eligendi dolore libero. Ducimus explicabo voluptate nostrum dolore maxime architecto rerum aliquid aspernatur dolorem corporis repellat quasi, sunt in minima vero hic molestiae assumenda laudantium, repellendus modi? Dolorum quos at excepturi consectetur, quaerat provident!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
   
 </body>
