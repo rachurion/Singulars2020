@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Pruebas de string methods de JavaScript</h1>
+  <p>Hay que pulsar F12 para ver la consola y ahi ver los logs.</p>
+  <script>
+    var nom1, nom2, nom3 ;
+    var nom = prompt("Introduzca su nombre y apellidos");
+
+    function splitBySpace(n) {
+      return n.split(" ");
+    }
+
+    function capitalizeFirst(s) {
+      return s.charAt(0).toUpperCase() + s.slice(1);
+    }
+
+    var namearray = splitBySpace(nom);
+
+    nom1 = capitalizeFirst(namearray[0]);
+    nom2 = capitalizeFirst(namearray[1]);
+    nom3 = capitalizeFirst(namearray[2]);
+
+    console.log("Nombre: " + nom1 + "\n" + "Primer apellido: " + nom2 + "\n" + "Segundo apellido: " + nom3);
+
+  </script>
+</body>
+</html>

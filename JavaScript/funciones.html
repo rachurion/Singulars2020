@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>Pruebas de Funciones de JavaScript</h1>
+  <p>Hay que pulsar F12 para ver la consola y ahi ver los logs.</p>
+  <script>
+    //--------------Funciones-------------------------//
+    function celToFar(t) {
+      let far;
+      far = t * 9/5 +32 ;
+      return far;
+    }
+
+    var tempC = 24;
+
+    console.log(tempC + "ºC son " + celToFar(tempC) + "ºF");
+
+    function saludoOut(n,d,m) {
+      let saludo = "Hola " + n + " feliz " + d + ", como esta tu " + m ;
+      return saludo;
+
+    }
+
+    var name = "Ricardo" ;
+    var day = "jueves";
+    var pet = "tortuga";
+
+    console.log(saludoOut(name,day,pet));
+
+    function saludoIn(n,d,m) {
+      let saludo = "Hola " + n + " feliz " + d + ", como esta tu " + m ;
+      console.log(saludo);
+    }
+
+    saludoIn(name,day,pet);
+
+    var tempC = 20;
+    var tempF = 80;
+
+    function convertTemp(t,g) {
+      let temp;
+      let error = "No es un tipo de temperatura valido"
+
+      switch (g) {
+        case "C":
+        temp =  t * 9/5 +32 ;
+        return temp;
+
+        case "F":
+          temp = (t - 32) * 5/9;
+          return temp;
+        
+        default:
+          return error; 
+        
+      }
+
+    }
+
+    console.log(convertTemp(24,"C"));
+
+    var x,y,sym ; // x,y son numeros, sym es uno de estos (+,-,*,/,**,%)
+
+    function calculadora(x,y,sym) {
+
+      let z, result;
+      let error = "El simbolo introducido no es correcto";
+
+      switch (sym) {
+        case "+":
+          z = x + y;
+          result = "La suma de " + x + " mas " + y + " es igual a " + z;
+          return result;
+        case "-":
+          z = x - y;
+          result = "La resta de " + x + " menos " + y + " es igual a " + z;
+          return result;
+        case "*":
+          z = x * y;
+          result = "La multiplicacíon de " + x + " por " + y + " es igual a " + z;
+          return result;
+        case "/":
+          z = x / y;
+          result = "La division de " + x + " entre " + y + " es igual a " + z;
+          return result;
+        case "**":
+          z = x ** y;
+          result = "El resultado de " + x + " elevado a la " + y + " es igual a " + z;
+          return result;
+        case "%":
+          z = x % y;
+          result = "El resto de la division de " + x + " entre " + y + " es igual a " + z;
+          return result;
+        default:
+          return error;
+      }
+
+    }
+
+    console.log(calculadora(2,3,"**"));
+
+    //-----------------Funciones Arrow--------------//
+
+        const cubo = (n) => (n**3);            // eleva al cubo
+        console.log(cubo(3));
+
+        const velocidad = (n) => n / 3.6;
+        console.log(velocidad(300));     // transforma km/h en m/s
+
+        const triangulo = (b,h) => (b*h)/2
+        console.log(triangulo(5,18));    // area d'un triangle
+
+        const circulo = (r) => {
+          let area, per ;
+          area = Math.PI * r**2;
+          per = 2*Math.PI *r
+          return [area,per];
+        }
+
+        console.log(circulo(4));         // calcula l'area i el perímetre d'un cercle (el valor de pi es pot obtenir amb Math.PI)
+
+  </script>
+</body>
+</html>
