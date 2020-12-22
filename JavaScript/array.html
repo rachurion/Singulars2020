@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Pruebas de array methods de JavaScript</h1>
+  <p>Hay que pulsar F12 para ver la consola y ahi ver los logs.</p>
+  <script>
+    var lista = prompt("¿Que es lo que tienes que comprar?")
+
+    function splitBySpace(n) {
+      return n.split(" ");
+    }
+
+    function printLista(s) {
+      console.log(` -${s}`);
+    }
+
+    var array = splitBySpace(lista);
+
+    console.log("Tienes que comprar:");
+
+    array.forEach(printLista);
+
+  </script>
+</body>
+</html>

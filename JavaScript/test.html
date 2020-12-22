@@ -64,96 +64,10 @@
 
     nota = parseFloat(nota_p);
 
-    //Condicional IF
-
-    //Cuando se usan condiciones probar los extremos
-
-    if (isNaN(nota) || nota > 10 || nota <0 ) console.log("Su nota no es valida");
-
-    else {
-      if( nota < 6) {
-        console.log("Su nota en el examen es: reprobado");
-      }
-
-      else if( nota < 7){
-        console.log("Su nota en el examen es: aprobado");
-
-      }
-
-      else if( nota < 8.5){
-        console.log("Su nota en el examen es: notable");
-
-      }
-
-      else {
-        console.log("Su nota en el examen es: excelente");
-      }
-    }
-
-    //------------------------------------------------------------------------//
-
-    var num = 10; //integer
-
-    console.log(`El número es ${num}`)
-
-    if (num > 0) console.log("El número es positivo");
-    else if (num < 0) console.log("El número es negativo");
-    else console.log("El número es cero");
-
-    if (num%2 == 0) console.log("El número es par");
-    else console.log("El número es impar");
-
-    if (num%5 == 0) console.log("El número es multiplo de 5");
-    else console.log("El número no es multiplo de 5");
-
-    if (num%10 == 0) console.log("El número es multiplo de 10");
-    else console.log("El número no es multiplo de 10");
-
-    if (num > 100) console.log("El número es mayor de 100");
-    else if (num === 100  ) console.log("El número es 100");
-    else console.log("El número es menor de 100");
-
-
-
     //-----------Colores en consola ------------//
 
     console.log("%cMensaje", "color: blue; font-family:Gothic;")
 
-    //---------------Switch------------------------------//
-
-    var data = new Date();
-        dia_sem = data.getDay();
-        dia_mes = data.getDate();
-
-    console.log(dia_sem, dia_mes);
-
-    switch(dia_sem) {
-      case 0: 
-        console.log("Sun");
-        break
-      case 1: 
-        console.log("Mon");
-        break
-      case 2: 
-        console.log("Tue");
-        break
-      case 3: 
-        console.log("Wed");
-        break
-      case 4: 
-        console.log("Thu");
-        break
-      case 5: 
-        console.log("Fri");
-        break
-      case 6: 
-        console.log("Sat");
-        break
-      default:
-        console.log("error"); 
-    }
-
-  
 
   </script>
 </body>
