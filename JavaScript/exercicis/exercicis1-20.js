@@ -617,3 +617,44 @@ function horoscopo() {
 
 var prediction = horoscopo();
 console.log(`Tu signo es ${prediction[0]} y te ofrezco la siguiente prediccion: ${prediction[1]}`);
+
+// exercici 20.1: crea una funció que generi prediccions aleatòries
+
+console.log("-----Ejercicio 20.1-----");
+
+function prediccio() {
+  let start = ["Mañana ", "El siguiente viernes ", "La semana que viene ", "Hoy ", "Cuando encuentres el amor "];
+  let middle = ["te ira ", "te sentiras "];
+  let end = ["bien.", "mal.", "de puta madre."];
+
+  let random_array = [parseInt(Math.random() * 5), parseInt(Math.random() * 2), parseInt(Math.random() * 3)]; 
+  console.log(start[random_array[0]] + middle[random_array[1]] + end[random_array[2]]);
+}
+
+prediccio();
+
+// exercici 20.2: crea una funció que implementi l'horòscop xinès
+
+console.log("-----Ejercicio 20.2-----");
+
+function horoscopXines() {
+  let chinese_signs = ["la Rata", "el Buey", "el Tigre", "el Conejo", "el Dragon", "la Serpiente", "el Caballo", "la Cabra", "el Mono", "el Gallo", "el Perro", "el Cerdo"];
+  let year = prompt("Introduzca el año (No puede ser menor a 1900)");
+  let index;
+  if (year < 1900) return "Por favor introduzca un año superior a 1899";
+  else if (year < 2000) {
+    index = year - 1900;
+    index = index % 12;
+    return `El signo zodiacal chino del año ${year} es ${chinese_signs[index]}`;
+  }
+  else {
+    index = year - 2000;
+    index = index % 12;
+    index = index + 5;
+    if (index > 12) index = index - 12;
+    index--;
+    return `El signo zodiacal chino del año ${year} es ${chinese_signs[index]}`;
+  }  
+}
+
+console.log(horoscopXines());

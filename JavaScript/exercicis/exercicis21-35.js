@@ -284,7 +284,10 @@ function repeatedBirthdayProbability(birthday_amount, iterations) {
 
 }
 
-repeatedBirthdayProbability(5,100);
+console.log ("PARADOJA CUMPLEAÑOS PORCENTAJE");
+for (let i = 5; i < 51; i = i + 5) {
+  repeatedBirthdayProbability(i,100);
+}
 
 //* ------------------------------ Objectes -------------------------------------
 
