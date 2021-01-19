@@ -1,0 +1,30 @@
+#pair {
+  display: flex;
+  align-items: center;
+}
+
+#greeting {
+  height: 20px;
+  width: 100px;
+  margin-right: 10px;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+  margin-right: 5px;
+  
+}
+
+#temp {
+  margin: 0 5px;
+}
+
+.t_converter {
+  display: flex;
+  align-items: center;
+}
+
+.t_converter p{
+  margin-left: 5px;
+}

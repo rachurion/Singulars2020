@@ -361,7 +361,7 @@ function objectShoppingList(stopper) {
    
 
   while (stopper_check != stopper) {
-    item_promt = prompt(`¿Que item desea añadir a su lista de compra? Introduzca el nombre del item, un espacio y la inicial de la categoria a la que lo desea añadir (C = Carniseria, F = Fruta y verdura, L = Lacetos y P = Panaderia). Recuerde que para terminar debe introducir la palabra ${stopper}`);
+    item_promt = prompt(`¿Que item desea añadir a su lista de compra? Introduzca el nombre del item, un espacio y la inicial de la categoria a la que lo desea añadir (C = Carniseria, F = Fruta y verdura, L = Lacteos y P = Panaderia). Recuerde que para terminar debe introducir la palabra ${stopper}`);
     item_promt = item_promt.split(" ");
     stopper_check = item_promt[0];
     if (!(stopper_check == stopper)) {
@@ -450,14 +450,14 @@ function csvManager(csv) {
   let counter_array = 0;
   let first_line = csv[0].split(",");
   let array_object = [];
-  let aux_object = {};
   let aux_array = [];
   let trim_year;
 
   while (counter_csv < csv.length) {
     aux_array = csv[counter_csv].split(",");
-
+    let aux_object = {};
     while (counter_array < aux_array.length) {
+      
       if (counter_array == 0) {
         trim_year = aux_array[counter_array].trim();
         aux_object[first_line[counter_array]] = trim_year;
@@ -466,7 +466,7 @@ function csvManager(csv) {
       
     }
     counter_array = 0;
-    array_object.push(Object.assign({}, aux_object));
+    array_object.push(aux_object);
     counter_csv++;
   }
 
