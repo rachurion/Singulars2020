@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../ejercicios_DOM/DOM.css">
+  <title>Exercici 11</title>
+  <style>
+    #equal {
+      width: 100%;
+    } 
+  </style>
+</head>
+<body>
+  <h2>Exercici 11</h2>
+  <p>Calculadora guai. Fes una calculadora amb botons i pantalla (+, -, x, /, =, C).</p>
+  </br>
+  <div class="calculatorFancy">
+    <label for="screen"></label>
+    <input class="screen" placeholder="0" type="text" id="screen" name="screen"> 
+    <div class="buttonRow">
+      <button id="seven">7</button>
+      <button id="eight">8</button>
+      <button id="nine">9</button>
+      <button id="plus">+</button>
+    </div>
+    <div class="buttonRow">
+      <button id="four">4</button>
+      <button id="five">5</button>
+      <button id="six">6</button>
+      <button id="minus">-</button>
+    </div>
+    <div class="buttonRow">
+      <button id="one">1</button>
+      <button id="two">2</button>
+      <button id="three">3</button>
+      <button id="mult">x</button>
+    </div>
+    <div class="buttonRow">
+      <button id="C">C</button>
+      <button id="zero">0</button>
+      <button id="dot">.</button>
+      <button id="divide">/</button>
+    </div> 
+    <div class="buttonRow">
+      <button id="equal">=</button>
+    </div>
+  </div>
+  <script src="./DOM.js"></script>
+  <script>
+    let screen = document.getElementById("screen");
+    let value1, value2, operator;
+    var buttonOne = document.querySelector("#one");
+    buttonOne.addEventListener("click", () => {
+      [value1, value2, screen.value] = calculatorButton(1, operator, value1, value2, screen); 
+    });
+    var buttonTwo = document.querySelector("#two");
+    buttonTwo.addEventListener("click", () => {
+      [value1, value2, screen.value] = calculatorButton(2, operator, value1, value2, screen);
+    } )
+    var buttonThree = document.querySelector("#three");
+    buttonThree.addEventListener("click", () => {
+      [value1, value2, screen.value] = calculatorButton(3, operator, value1, value2, screen);
+    } )
+    var buttonFour = document.querySelector("#four");
+    buttonFour.addEventListener("click", () => {
+      [value1, value2, screen.value] = calculatorButton(4, operator, value1, value2, screen);
+    } )
+    var buttonFive = document.querySelector("#five");
+    buttonFive.addEventListener("click", () => {
+      [value1, value2, screen.value] = calculatorButton(5, operator, value1, value2, screen);
+    } )
+    var buttonSix = document.querySelector("#six");
+    buttonSix.addEventListener("click", () => {
+      [value1, value2, screen.value] = calculatorButton(6, operator, value1, value2, screen);
+    } )
+    var buttonSeven = document.querySelector("#seven");
+    buttonSeven.addEventListener("click", () => {
+      [value1, value2, screen.value] = calculatorButton(7, operator, value1, value2, screen);
+    } )
+    var buttonEight = document.querySelector("#eight");
+    buttonEight.addEventListener("click", () => {
+      [value1, value2, screen.value] = calculatorButton(8, operator, value1, value2, screen);
+    } )
+    var buttonNine = document.querySelector("#nine");
+    buttonNine.addEventListener("click", () => {
+      [value1, value2, screen.value] = calculatorButton(9, operator, value1, value2, screen);
+    } )
+    var buttonZero = document.querySelector("#zero");
+    buttonZero.addEventListener("click", () => {
+      [value1, value2, screen.value] = calculatorButton(0, operator, value1, value2, screen);
+    } )
+    var buttonDot = document.querySelector("#dot");
+    buttonDot.addEventListener("click", () => {
+      if (screen.value.includes(".") || screen.value == "" ) {
+        screen.value = NaN;
+        value1 = null;
+        value2 = null;
+        operator = null;
+      } else {
+        screen.value += ".";
+      }
+    } )
+    var buttonClear = document.querySelector("#C");
+    buttonClear.addEventListener("click", () => {
+      screen.value = null
+      value1 = null;
+      value2 = null;
+      operator = null;;
+    } )
+    var buttonPlus = document.querySelector("#plus");
+    buttonPlus.addEventListener("click", () => {
+      [operator, value1, value2, screen.value] = calculatorOperator(operator, "+", value1, value2, screen);
+    } )
+    var buttonMinus = document.querySelector("#minus");
+    buttonMinus.addEventListener("click", () => {
+      [operator, value1, value2, screen.value] = calculatorOperator(operator, "-", value1, value2, screen);
+    } )
+    var buttonMult = document.querySelector("#mult");
+    buttonMult.addEventListener("click", () => {
+      [operator, value1, value2, screen.value] = calculatorOperator(operator, "x", value1, value2, screen);
+    } )
+    var buttonDiv = document.querySelector("#divide");
+    buttonDiv.addEventListener("click", () => {
+      [operator, value1, value2, screen.value] = calculatorOperator(operator, "/", value1, value2, screen);
+    } )
+   
+    var buttonEqual = document.querySelector("#equal");
+    buttonEqual.addEventListener("click", () => {
+      if (screen.value == "") {
+        return;
+      }
+      else {
+        if (screen.value.includes("+") || screen.value.includes("-") || screen.value.includes("/") || screen.value.includes("x")) return;
+        else {
+          if(value2){
+            value2 = screen.value;
+            if (operator == "x") screen.value = calculator(parseFloat(value1), "*", parseFloat(value2));
+            else screen.value = calculator(parseFloat(value1), operator, parseFloat(value2));
+            value1 = screen.value;
+            value2 = null;
+          } 
+          else return;
+        }
+      }
+    } )
+  </script>
+</body>
+</html>

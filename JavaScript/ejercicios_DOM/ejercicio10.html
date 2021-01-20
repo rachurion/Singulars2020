@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../ejercicios_DOM/DOM.css">
+    <title>Exercici 10</title>
+</head>
+<body>
+    <h2>Exercici 10</h2>
+
+    <p>Calculadora simple. Fes una calculadora que agafi dos números de inputs de text i una operació de imput select i t'escrigui el resultat a l'HTML.</p>
+    <div class="calculator">
+      <label for="fnum"></label>
+      <input class="simplevalue" placeholder="0" type="text" id="fnum" name="fnum"><br><br> 
+
+      <label for="operators"></label>
+      <select name="operators" id="operators">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="/">/</option>
+      <option value="*">*</option>
+      <option value="%">%</option>
+      <option value="**">**</option>
+      <option value="** -">√</option>
+      </select>
+
+      <label for="snum"></label>
+      <input class="simplevalue" placeholder="0" type="text" id="snum" name="snum"><br><br> 
+      
+    </div>
+    <button id="math">Calcular</button>
+    <label for="result"></label>
+    <input class="simpleresult" type="text" name="result" id="result" placeholder="resultado" readonly="readonly" />
+
+    <script src="./DOM.js"></script>
+    <script>
+      var button = document.querySelector("#math");
+      button.addEventListener("click", () => {
+        let value1 = 0;
+        let value2 = 0;
+        let operator = document.querySelector("#operators").value;
+        if (document.querySelector("#fnum").value) value1 = parseFloat(document.querySelector("#fnum").value);
+        if (document.querySelector("#snum").value) value2 = parseFloat(document.querySelector("#snum").value);
+        if ((operator == "/" && value2 == 0) || (isNaN(value1) || isNaN(value2))) document.getElementById("result").value = `NaN`;
+        else {
+          let result = calculator(value1, operator, value2);
+          document.getElementById("result").value = result;
+        }
+      } )
+
+      
+    </script>
+</body>
+</html>
