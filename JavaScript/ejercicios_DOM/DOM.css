@@ -1,0 +1,65 @@
+#pair {
+  display: flex;
+  align-items: center;
+}
+
+#greeting {
+  height: 20px;
+  width: 100px;
+  margin-right: 10px;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+  margin-right: 5px;
+  
+}
+
+#temp {
+  margin: 0 5px;
+}
+
+.t_converter {
+  display: flex;
+  align-items: center;
+}
+
+.t_converter p{
+  margin-left: 5px;
+}
+
+.calculator {
+  display: flex;
+  align-items: center;
+}
+
+.simplevalue {
+  width: 60px;
+}
+
+.simpleresult {
+  width: 100px;
+}
+
+#operators {
+  margin: 0 5px;
+}
+
+
+.calculatorFancy {
+  display: inline;
+}
+
+.calculatorFancy button {
+  width: 40px;
+}
+
+.screen {
+  width: 164px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  text-align: right;
+}
+
+

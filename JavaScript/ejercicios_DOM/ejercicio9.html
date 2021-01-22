@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../ejercicios_DOM/DOM.css">
+    <title>Exercici 9</title>
+
+</head>
+<body>
+    
+  <h2>Exercici 9</h2>
+
+  <p> Fes un convertidor de graus Fahrenheit, Celsius i Kelvin que agafi la temperatura de un input de text i agafi les unitats originals i de destí de dos inputs select.</p>
+  </br>
+ <div class="t_converter">
+  <label for="text">Introduzca la temperatura que desea convertir</label>
+  <p> de </p>
+  <select name="inital_temp" id="inital_temp">
+    <option value="F">Fahrenheit</option>
+    <option value="C">Celsius</option>
+    <option value="K">Kelvin</option>
+  </select>
+  <p> a </p>
+  <select name="final_temp" id="final_temp">
+    <option value="F">Fahrenheit</option>
+    <option value="C">Celsius</option>
+    <option value="K">Kelvin</option>
+  </select>
+  <input type="text" id="temp" name="temp"><br><br> 
+</div>
+  <div id="pair">
+      <button id="greeting"> Convertir</button>
+      <p id ="temp_convert"></p>
+  </div>
+    <script src="./DOM.js"></script>
+    <script>
+      var button = document.querySelector("#greeting");
+     
+      button.addEventListener("click", () => {
+        let text;
+        let element = document.getElementById("pair");
+        let initial_temp = document.querySelector("#inital_temp").value;
+        let final_temp = document.querySelector("#final_temp").value;
+        let initial_value = document.querySelector("#temp").value;
+        let converted_value;
+        if (initial_temp == "F") {
+          if (final_temp == "F") {
+            text = `${initial_value}º Fahrenheit son ${initial_value}º Fahrenheit!`;
+          } else if (final_temp == "C"){
+            converted_value = (initial_value - 32) * (5 / 9);
+            text = `${initial_value}º Fahrenheit son ${parseInt(converted_value)}º Celcius!`;
+          } else {
+            converted_value = ((initial_value - 32) * (5 / 9)) + 273.15;
+            text = `${initial_value}º Fahrenheit son ${parseInt(converted_value)}º Kelvin!`;
+          }
+        } else if (initial_temp == "C") {
+          if (final_temp == "F") {
+            converted_value = (initial_value * (5 / 9)) + 32;
+            text = `${initial_value}º Celcius son ${parseInt(converted_value)}º Fahrenheit!`;
+          } else if (final_temp == "C"){
+            text = `${initial_value}º Celcius son ${initial_value}º Celcius!`;
+          } else {
+            converted_value = initial_value + 273.15;
+            text = `${initial_value}º Celcius son ${parseInt(converted_value)}º Kelvin!`;
+          }
+        } else {
+          if (final_temp == "F") {
+            converted_value = ((initial_value - 273.15) * (9 / 5)) + 32;
+            text = `${initial_value}º Kelvin son ${parseInt(converted_value)}º Fahrenheit!`;
+          } else if (final_temp == "C"){
+            converted_value = initial_value - 273,15;
+            text = `${initial_value}º Kelvin son ${parseInt(converted_value)}º Celcius!`;
+          } else {
+            text = `${initial_value}º Kelvin son ${initial_value}º Kelvin!`;
+          }
+
+        }
+        
+        document.getElementById("temp_convert").innerHTML = text;
+      } )
+
+      
+    </script>
+</body>
+</html>

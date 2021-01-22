@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../ejercicios_DOM/DOM.css">
+    <title>Exercici 5</title>
+
+</head>
+<body>
+    
+  <h2>Exercici 5</h2>
+
+  <p> Fes que un botó agafi el teu nom d'un input de text i et saludi per la consola dient el teu nom amb el color que hagis seleccionat en un input select.</p>
+  </br>
+  <label for="colors">Elija un color:</label>
+
+  <select name="colors" id="colors">
+    <option value="red">Rojo</option>
+    <option value="blue">Azul</option>
+    <option value="yellow">Amarillo</option>
+    <option value="purple">Morado</option>
+  </select>
+</br> </br>
+  <label for="fname">Nombre:</label>
+  <input type="text" id="name" name="fname"><br><br> 
+  <div id="pair">
+      <button id="greeting">Saludo!</button>
+  </div>
+    <script src="./DOM.js"></script>
+    <script>
+      var button = document.querySelector("#greeting");
+     
+      button.addEventListener("click", () => {
+        console.log(` %cHola ${document.querySelector("#name").value}!`, `color:${document.querySelector("#colors").value} `)
+      } )
+
+      
+    </script>
+</body>
+</html>

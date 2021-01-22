@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../ejercicios_DOM/DOM.css">
+    <title>Exercici 3</title>
+
+</head>
+<body>
+    
+  <h2>Exercici 3</h2>
+
+  <p>Fes que un botó agafi el teu nom d'un input de text i et saludi escrivint el teu nom al costat del botó (en el HTML). </p>
+  </br>
+      
+  <label for="fname">Nombre:</label>
+  <input type="text" id="name" name="fname"><br><br> 
+  <div id="pair">
+      <button id="greeting">Saludo!</button>
+  </div>
+    <script src="./DOM.js"></script>
+    <script>
+      var button = document.querySelector("#greeting");
+      var tag = document.createElement("p");
+      
+      var element = document.getElementById("pair");
+      button.addEventListener("click", () => {
+        let text = document.createTextNode(`Hola ${document.querySelector("#name").value}! `);
+        tag.appendChild(text);
+        element.appendChild(tag);
+      } )
+
+      
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../ejercicios_DOM/DOM.css">
+    <title>Exercici 8</title>
+
+</head>
+<body>
+    
+  <h2>Exercici 8</h2>
+
+  <p> Fes que un botó agafi una temperatura en graus Celsius d'un input de text i la converteixi en graus Fahrenheit.</p>
+  </br>
+ 
+  <label for="temp">Diga la temperatura en Celcius</label>
+  <input type="text" id="temp" name="temp"><br><br> 
+  <div id="pair">
+      <button id="greeting"> Cº to Fº</button>
+  </div>
+    <script src="./DOM.js"></script>
+    <script>
+      var button = document.querySelector("#greeting");
+     
+      button.addEventListener("click", () => {
+        let text;
+        let tag = document.createElement("p");
+        let element = document.getElementById("pair");
+        let celcius = document.querySelector("#temp").value;
+        let fahrenheit = (celcius * (9 / 5)) + 32;
+        text = document.createTextNode(`${celcius}º Celcius son ${fahrenheit}º Fahrenheit!`);
+        tag.appendChild(text);
+        element.appendChild(tag);
+      } )
+
+      
+    </script>
+</body>
+</html>
