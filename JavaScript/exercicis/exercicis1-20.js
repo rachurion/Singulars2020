@@ -240,9 +240,9 @@ function botiga() {
   }
 }
 
-//llamada var carrito = botiga();
+ var carrito = botiga();
 
-//llamada console.log(carrito);  // això tornarà "Has demanat un barret de pirata (talla L)"
+ console.log(carrito);  // això tornarà "Has demanat un barret de pirata (talla L)"
 
 //* ---------------------------- Mètodes numbers -------------------------------
 
@@ -304,7 +304,7 @@ function calculadora() {
 
 }
 
-//llamada calculadora();
+ calculadora();
 
 
 // exercici 12: a partir de tres números, calcula si poden ser els tres costats d'un triangle rectangle

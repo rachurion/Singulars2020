@@ -32,7 +32,7 @@ for (let i = 1 ; i <= 20; i++){
 
 console.log("-----Ejercicio 23-----");
 
-//llamada var max = prompt("Fins quin número vols contar (1-1000)?");
+ var max = prompt("Fins quin número vols contar (1-1000)?");
 
 function contar(max) {
   for (let i = 0 ; i <= max; i++) {
@@ -40,7 +40,7 @@ function contar(max) {
     if (i == max) break;
   }
 }
-//llamada contar(max); // això ha de mostrar a la consola els números de l'1 al número introduit
+ contar(max); // això ha de mostrar a la consola els números de l'1 al número introduit
 
 
 // exercici 24: fes un buscador de números primers. Li fixarem un límit (p.e. 100) i agafarà cada número i el dividirà
@@ -61,7 +61,7 @@ function buscadorPrimos(max) {
 
 }
 
-//llamada buscadorPrimos(10);
+ buscadorPrimos(10);
 
 
 // exercici 25: fes un contador que només mostri els números que tinguin un dígit contingut a la string predefinida fins a 100
@@ -69,7 +69,7 @@ function buscadorPrimos(max) {
 
 console.log("-----Ejercicio 25-----");
 
-//llamada var digits = prompt("Quins digits vols mostrar (1-9)?");
+ var digits = prompt("Quins digits vols mostrar (1-9)?");
 
 function mostrarDigits(digits) {
   let str_number;
@@ -92,7 +92,7 @@ function mostrarDigits(digits) {
 }
 
 
-//lamada mostrarDigits(digits);      // si dígits és 234, això mostrarà "2, 3, 4, 12, 13, 14, 20, 21, 22, 23..."
+mostrarDigits(digits);      // si dígits és 234, això mostrarà "2, 3, 4, 12, 13, 14, 20, 21, 22, 23..."
 
 
 
@@ -119,7 +119,7 @@ function shoppingList(stopper) {
   
 }
 
-//llamada shoppingList("stop");
+ shoppingList("stop");
 
 //* ---------------------------- Mètodes arrays ---------------------------------
 
@@ -192,7 +192,6 @@ console.log("-----Ejercicio 30-----");
 
 function arrayShoppingList(stopper) {
   let stopper_check = "";
-  let counter = 0;
   let shopping_list = [];
   console.log("Llista de la compra:");
 
@@ -205,7 +204,7 @@ function arrayShoppingList(stopper) {
   return shopping_list;
 }
 
-//llamada console.log(arrayShoppingList("stop"));
+ console.log(arrayShoppingList("stop"));
 
 
 // exercici 31: paradoxa de l'aniversari. Genera N dates d'aniversari aleatòries (1-365) en un array i comprova
@@ -428,8 +427,8 @@ function printShoppingList (shopping_list) {
   }
 }
 
-//llamada var food_list = objectShoppingList("stop");
-//llamada printShoppingList(food_list);
+ var food_list = objectShoppingList("stop");
+ printShoppingList(food_list);
 
 
 // exercici 35: gestionar un CSV. El programa ha d'agafar un string en format CSV i ficar tota la informació dins un array
