@@ -18,12 +18,12 @@ function calculator(first_value, operator, second_value) {
       break;
     case "/":
       if (second_value == 0) {
-        console.log("dividir entre cero");
-        result = "No se puede dividir entre cero";
+        result = "NaN";
         break;
-      }
+      } else {
       result = first_value / second_value;
       break;
+      }
     case "%":
       result = first_value % second_value;
       break;
@@ -53,12 +53,12 @@ function calculatorButton(buttonValue, operator, value1, value2, screen) {
       return [value1, value2, screen.value]
     }
   } 
-  else if (!(value2)) {
+  else if (!(value2) && value2 != 0) {
     value2 = buttonValue;
     screen.value = buttonValue;
     return [value1, value2, screen.value]
   } 
-  else if (value2) {
+  else if (value2 || value2 == 0) {
     value2 += buttonValue;
     screen.value += buttonValue;
     return [value1, value2, screen.value]
@@ -70,7 +70,7 @@ function calculatorOperator(operatorPrev, operator,value1,value2,screen){
   if (!(screen.value)){
     return [operator, value1, value2, ""];
   } 
-  if (value2) {
+  if (value2 || value2 == 0) {
     value2 = screen.value;
     if (operatorPrev == "x") screen.value = calculator(parseFloat(value1), "*", parseFloat(value2));
     else if (operatorPrev == "^") screen.value = calculator(parseFloat(value1), "**", parseFloat(value2));
@@ -87,3 +87,59 @@ function calculatorOperator(operatorPrev, operator,value1,value2,screen){
   return [operator, value1, value2, screen.value];
 }
 
+function printShoppingList(list) {
+  let stringList = "";
+  if (list.C.length != 0) {
+    stringList += "+Carniceria: \n"
+    list.C.forEach(element => {
+      stringList += (`\xa0\xa0\xa0\xa0-${element}\n`);
+    });
+  }
+  if (list.F.length != 0) {
+    stringList += "+Fruta y Verdura: \n"
+    list.F.forEach(element => {
+      stringList += (`\xa0\xa0\xa0\xa0-${element}\n`);
+    });
+  }
+  if (list.P.length != 0) {
+    stringList += "+Panaderia: \n"
+    list.P.forEach(element => {
+      stringList += (`\xa0\xa0\xa0\xa0-${element}\n`);
+    });
+  }
+  if (list.O.length != 0) {
+    stringList += "+Otros: \n"
+    list.O.forEach(element => {
+      stringList += (`\xa0\xa0\xa0\xa0-${element}\n`);
+    });
+  }
+
+  return stringList;
+
+}
+
+function getSelected(name, finalString) {
+  let radioGroup = document.querySelectorAll(`input[name=${name}]`);
+  let selected;
+  for(let option of radioGroup) {
+    if (option.checked) {
+      
+      selected = option.nextSibling.nodeValue;
+      break;
+    }
+  }
+  finalString += `${selected}\n\n`;
+  return finalString;
+
+}
+
+function showOne(toShow, group, toRemove) {
+  for(let option of group) {
+    if (option.classList.contains(toShow)){
+      if(!(option.classList.contains(toRemove))) option.classList.add(toRemove)
+      continue;
+    } 
+    option.classList.remove(toRemove);
+  }
+
+}

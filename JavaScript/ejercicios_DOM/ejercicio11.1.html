@@ -6,12 +6,7 @@
   <link rel="stylesheet" href="../ejercicios_DOM/DOM.css">
   <title>Exercici 11.1</title>
   <style>
-    #equal {
-       
-    } 
-    #shift {
-      
-    }
+  
   </style>
 </head>
 <body>
@@ -20,32 +15,32 @@
   </br>
   <div class="calculatorFancy">
     <label for="screen"></label>
-    <input class="screen" placeholder="0" type="text" id="screen" name="screen"> 
-    <div class="buttonRow">
+    <input class="screen" placeholder="0" type="text" id="screen" name="screen" readonly> 
+    <div class="">
       <button id="seven">7</button>
       <button id="eight">8</button>
       <button id="nine">9</button>
       <button id="plus">+||^</button>
     </div>
-    <div class="buttonRow">
+    <div class="">
       <button id="four">4</button>
       <button id="five">5</button>
       <button id="six">6</button>
       <button id="minus">-||√</button>
     </div>
-    <div class="buttonRow">
+    <div class="">
       <button id="one">1</button>
       <button id="two">2</button>
       <button id="three">3</button>
       <button id="mult">x</button>
     </div>
-    <div class="buttonRow">
+    <div class="">
       <button id="C">C</button>
       <button id="zero">0</button>
       <button id="dot">.</button>
       <button id="divide">/</button>
     </div> 
-    <div class="buttonRow">
+    <div class="">
       <button id="shift">Shift</button>
       <button id="equal">=</button>
     </div>
@@ -94,17 +89,12 @@
     var buttonZero = document.querySelector("#zero");
     buttonZero.addEventListener("click", () => {
       [value1, value2, screen.value] = calculatorButton(0, operator, value1, value2, screen);
+      if (value2 == 0) console.log(value2);
     } )
     var buttonDot = document.querySelector("#dot");
     buttonDot.addEventListener("click", () => {
-      if (screen.value.includes(".") || screen.value == "" ) {
-        screen.value = NaN;
-        value1 = null;
-        value2 = null;
-        operator = null;
-      } else {
-        screen.value += ".";
-      }
+      if (!(screen.value.includes(".") || screen.value == "" || (screen.value.charAt(length + 1) == "+" || screen.value.charAt(length + 1) == "-" || screen.value.charAt(length + 1) == "/" || screen.value.charAt(length + 1) == "x" || screen.value.charAt(length + 1) == "^" || screen.value.charAt(length + 1) == "√"))) screen.value += ".";
+      
     } )
     var buttonClear = document.querySelector("#C");
     buttonClear.addEventListener("click", () => {
@@ -114,24 +104,33 @@
       operator = null;;
     } )
     var buttonShift = document.querySelector("#shift");
-    buttonClear.addEventListener("click", () => {
-      if (shift == 0) shift = 1;
-      else shift = 0;
+    buttonShift.addEventListener("click", () => {
+      console.log(shift);
+      if (shift == 0) {
+        shift = 1;
+        buttonShift.style.backgroundColor = "red";
+      } 
+      else {
+        shift = 0;
+        buttonShift.style.backgroundColor = "";
+      }
     } )
     var buttonPlus = document.querySelector("#plus");
     buttonPlus.addEventListener("click", () => {
       if (shift == 0)[operator, value1, value2, screen.value] = calculatorOperator(operator, "+", value1, value2, screen);
       else {
-        [operator, value1, value2, screen.value] = calculatorOperator(operator, "**", value1, value2, screen);
+        [operator, value1, value2, screen.value] = calculatorOperator(operator, "^", value1, value2, screen);
         shift = 0;
+        buttonShift.style.backgroundColor = "";
       }
     } )
     var buttonMinus = document.querySelector("#minus");
     buttonMinus.addEventListener("click", () => {
       if (shift == 0) [operator, value1, value2, screen.value] = calculatorOperator(operator, "-", value1, value2, screen);
       else {
-        [operator, value1, value2, screen.value] = calculatorOperator(operator, "** -", value1, value2, screen);
+        [operator, value1, value2, screen.value] = calculatorOperator(operator, "√", value1, value2, screen);
         shift = 0;
+        buttonShift.style.backgroundColor = "";
       }
     } )
     var buttonMult = document.querySelector("#mult");
@@ -151,7 +150,7 @@
       else {
         if (screen.value.includes("+") || screen.value.includes("-") || screen.value.includes("/") || screen.value.includes("x") || screen.value.includes("^") || screen.value.includes("√")) return;
         else {
-          if(value2){
+          if(value2 || value2 == 0){
             value2 = screen.value;
             if (operator == "x") screen.value = calculator(parseFloat(value1), "*", parseFloat(value2));
             else if (operator == "^") screen.value = calculator(parseFloat(value1), "**", parseFloat(value2));
@@ -164,6 +163,7 @@
         }
       }
     } )
+
   </script>
 </body>
 </html>

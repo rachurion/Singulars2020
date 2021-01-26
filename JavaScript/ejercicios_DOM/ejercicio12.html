@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../ejercicios_DOM/DOM.css">
+  <title>Exercici 12</title>
+  <style>
+    .itemInput {
+      display: inline-block;
+      margin-top: 20px;
+      position: absolute;
+    }
+
+    .shoppingButtons {
+      margin-top: 50px;
+      position: absolute;
+    }
+
+    .shoppingList {
+      display: inline-block;
+      margin-left: 400px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Exercici 12</h2>
+  <p> Llista de la compra super guai. Igual que la que funcionava amb prompts però amb imput de text, selecció de secció del supermercat i botó per ordenar alfabéticament.</p>
+  
+  <div class="itemInput">
+    <div class="item">
+      <label for="item">Item a añadir:</label>
+      <input type="text" id="item" name="item">
+      <select name="sections" id="sections">
+        <option value="C">Carniceria</option>
+        <option value="F">Fruta y Verdura</option>
+        <option value="P">Panaderia</option>
+        <option value="O">Otros</option>
+      </select>
+      </br></br>
+    </div>
+  </div>
+  <div class="shoppingButtons">
+    <button id="add">Añadir item</button>
+    <button id="sort">Ordernar</button>
+    <!-- <button id="print">Imprimir lista</button> -->
+  </div>
+  <div class="shoppingList">
+    <h3> Lista de la compra: </h3>
+    <p></p>
+  </div>
+ 
+  <script src="./DOM.js"></script>
+  <script>
+    let itemObjectList = {C:[], F:[], P:[], O:[]};
+    var buttonAdd = document.querySelector("#add");
+    buttonAdd.addEventListener("click", () => {
+      let itemValue = document.querySelector("#item").value;
+      let itemSection = document.querySelector("#sections").value;
+      document.querySelector("#item").value = null;
+      document.querySelector("#sections").value = "C";
+      itemObjectList[itemSection].push(itemValue);
+      document.querySelector(".shoppingList p").innerText = printShoppingList(itemObjectList);
+    } )
+
+    var buttonSort = document.querySelector("#sort");
+    buttonSort.addEventListener("click", () => {
+      itemObjectList.C.sort();
+      itemObjectList.F.sort();
+      itemObjectList.P.sort();
+      itemObjectList.O.sort();
+      document.querySelector(".shoppingList p").innerText = printShoppingList(itemObjectList);
+    })
+  </script>
+</body>
+</html>

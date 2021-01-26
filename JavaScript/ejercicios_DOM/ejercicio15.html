@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../ejercicios_DOM/DOM.css">
+  <title>Exercici 15</title>
+  <style>
+    .red{
+      background-color: red;
+    }
+    .blue{
+      background-color: blue;
+    }
+    .yellow{
+      background-color: yellow;
+    }
+    .green{
+      background-color: green;
+    }
+    .purple{
+      background-color: purple;
+    }
+  </style>
+</head>
+<body>
+  <h2>Exercici 15</h2>
+  <p> Filtre guai. Fes un filtre de elements que et mostri els d'un color concret (blau, verd, groc, vermell), tots els elements o cap element amb una animació que faci que els elements que sobren desapareguin d'alguna manera.</p>
+  </br>
+  <div class="buttonRow">
+    <button id="showRed"> Rojo </button> </br></br>
+    <button id="showBlue"> Azul </button> </br></br>
+    <button id="showYellow">Amarillo</button> </br></br>
+    <button id="showGreen">Verde</button> </br></br>
+    <button id="showAll"> Todos</button> </br></br>
+    <button id="showNone"> Nada</button> </br></br>
+  </div>
+  <div class="square show purple"></div>
+  <div class="square show blue"></div>
+  <div class="square show red"></div>
+  <div class="square show blue"></div>
+  <div class="square show green"></div>
+  <div class="square show purple"></div>
+  <div class="square show red"></div>
+  <div class="square show yellow"></div>
+  <div class="square show red"></div>
+  <div class="square show green"></div>
+  <div class="square show purple"></div>
+  <div class="square show blue"></div>
+
+  <script src="./DOM.js"></script>
+  <script>
+    let squareGroup = document.querySelectorAll(`.square`);
+    let buttonRed = document.querySelector("#showRed");
+      buttonRed.addEventListener("click", () => {
+        showOne("red", squareGroup, "show");
+      })
+    let buttonBlue = document.querySelector("#showBlue");
+      buttonBlue.addEventListener("click", () => {
+        showOne("blue", squareGroup, "show");
+      })
+    let buttonYellow = document.querySelector("#showYellow");
+      buttonYellow.addEventListener("click", () => {
+        showOne("yellow", squareGroup, "show");
+      })
+    let buttonGreen = document.querySelector("#showGreen");
+      buttonGreen.addEventListener("click", () => {
+        showOne("green", squareGroup, "show");
+      })
+    let buttonAll = document.querySelector("#showAll");
+      buttonAll.addEventListener("click", () => {
+        for(let option of squareGroup) {
+          if(!(option.classList.contains("show"))) option.classList.add("show");
+        }
+      })
+    let buttonNone = document.querySelector("#showNone");
+      buttonNone.addEventListener("click", () => {
+        for(let option of squareGroup) {
+          if(option.classList.contains("show")) option.classList.remove("show");
+        }
+      })
+
+  </script>
+</body>
+</html>

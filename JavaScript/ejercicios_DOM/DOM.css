@@ -62,4 +62,36 @@ p {
   text-align: right;
 }
 
+.mealbox {
+  display: flex;
+  align-items: center;
+}
 
+.letter {
+  display: none;
+  background-color: greenyellow;
+  padding: 20px;
+}
+
+.square{
+  display: inline-block;
+  height: 250px;
+  width: 0px;
+  transition: 1s;
+ 
+}
+.show{
+  width: 250px;
+  border: 5px solid black;
+  margin: 10px
+}
+
+.buttonRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonRow > button {
+  margin: 5px;
+}

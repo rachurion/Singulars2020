@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../ejercicios_DOM/DOM.css">
+  <title>Exercici 13</title>
+  <style>
+  
+  </style>
+</head>
+<body>
+  <h2>Exercici 13</h2>
+  <p> Fes un selector de propietats d'una caixa (nom, material, mida i missatge) amb input text i selects que al clicar un botó escrigui al HTML "Omar ha pedido una caja de sushi tamaño grande (con mucho wasabi)".</p>
+  </br>
+  <div class="mealbox">
+    <label for="name"></label>
+    <input placeholder="nombre" type="text" id="name" name="name"><br><br> 
+    <label for="food"></label>
+      <select name="food" id="food">
+        <option >sushi</option>
+        <option >tacos</option>
+        <option >hamburguesas</option>
+        <option >camarones</option>
+      </select>
+    <label for="size"></label>
+      <select name="size" id="size">
+        <option value="xl">extra grande</option>
+        <option value="l">grande</option>
+        <option value="m">mediano</option>
+        <option value="s">pequeño</option>
+      </select>
+    <label for="message"></label>
+    <input placeholder="mensaje" type="text" id="message" name="message"><br><br> 
+  </div>
+
+  <button id="write">Escribir</button>
+  <p id="finalMessage"></p>
+
+  <script src="./DOM.js"></script>
+  <script>
+     var button = document.querySelector("#write");
+      button.addEventListener("click", () => {
+        let boxMessage = `${document.querySelector("#name").value} ha pedido una caja de ${document.querySelector("#food").value} tamaño ${document.querySelector("#size").value} (${document.querySelector("#message").value}).`;
+        document.querySelector("#finalMessage").innerText = boxMessage;
+
+      })
+
+  </script>
+</body>
+</html>
