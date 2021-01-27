@@ -67,14 +67,18 @@ function calculatorButton(buttonValue, operator, value1, value2, screen) {
 }
 
 function calculatorOperator(operatorPrev, operator,value1,value2,screen){
+  
   if (!(screen.value)){
     return [operator, value1, value2, ""];
   } 
+  if (operator == "√") {
+    screen.value = calculator(parseFloat(value1), "** -", 2);
+  }
   if (value2 || value2 == 0) {
     value2 = screen.value;
     if (operatorPrev == "x") screen.value = calculator(parseFloat(value1), "*", parseFloat(value2));
     else if (operatorPrev == "^") screen.value = calculator(parseFloat(value1), "**", parseFloat(value2));
-    else if (operatorPrev == "√") screen.value = calculator(parseFloat(value1), "** -", parseFloat(value2));
+    //else if (operatorPrev == "√") screen.value = calculator(parseFloat(value1), "** -", parseFloat(value2));
     else screen.value = calculator(parseFloat(value1), operatorPrev, parseFloat(value2));
     value1 = screen.value;
     value2 = null;
@@ -83,7 +87,7 @@ function calculatorOperator(operatorPrev, operator,value1,value2,screen){
   value1 = screen.value;
   if (screen.value.charAt(length + 1) == "+" || screen.value.charAt(length + 1) == "-" || screen.value.charAt(length + 1) == "/" || screen.value.charAt(length + 1) == "x" || screen.value.charAt(length + 1) == "^" || screen.value.charAt(length + 1) == "√"){
     screen.value = screen.value.slice(0, -1) + operator;
-  } else screen.value += `${operator}`;
+  } else if (operator != "√") screen.value += `${operator}`;
   return [operator, value1, value2, screen.value];
 }
 
@@ -136,10 +140,18 @@ function getSelected(name, finalString) {
 function showOne(toShow, group, toRemove) {
   for(let option of group) {
     if (option.classList.contains(toShow)){
-      if(!(option.classList.contains(toRemove))) option.classList.add(toRemove)
+      option.style.width = "250px";
+      if(!(option.classList.contains(toRemove))) {
+        option.classList.add(toRemove)
+
+      } 
       continue;
-    } 
-    option.classList.remove(toRemove);
+    } else  {
+      option.classList.remove(toRemove);
+      setTimeout(() => option.style.width = "0px", 2000);
+      setTimeout(() => option.style.display = "none", 5000);
+    }
+     
   }
 
 }
