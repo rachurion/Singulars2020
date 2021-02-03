@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="./style.css">
+  <title>Hi! I'm Ricardo</title>
+</head>
+<body>
+  <div class="landing">
+    <div class="center-circle "> 
+      <img class="center-img" src="./img/circle-cropped.png" alt="">
+      <p id="job-title">FrontEnd Developer</p>
+      <p >rachurion@gmail.com</p>
+      <h1>Hi! I'm Ricardo an anspiring Frontend developer</h1>
+    </div>
+
+    <div class="scroll-left">
+      <div class="square" id="landing-left"></div>
+      <p>What I've done</p>
+    </div>
+
+    <div class="scroll-right">
+      <p>What I know</p>
+      <div class="square" id="landing-right"></div>
+    </div>
+
+    <div class="scroll-bottom">
+      <p>Who I am</p>
+      <div class="square" id="landing-bottom"></div>
+    </div>
+
+    
+  </div>
+
+  <div class="left">
+
+    <div class="scroll-right">
+      <p>Back</p>
+      <div class="square" id="background-right"></div>
+    </div>
+
+    <p> I started my programming journey in 2011 when I started my studies in the Universidad Simón Bolivar in Caracas, Venezuela. Through my years there I learnt the bascis of logic, discrete mathematics and programming with the help of the top teachers in the country. I started with Pascal and then move on to learn Python. 
+    On top of programming knowledge the experience at university expanded my mind and opened my life to an array of new people and experiences. I complemented my studies with active participation in the universities theater group Contratexto and with joing the american footbal team AFA USB.
+    Overall it was a wonderful experience and I learned the basics of many things like UX desing, Software development and server maintenance. </p>
+
+    <p> In 2017 with 6 years attempting to get a 5 year engineering degree and with my graduation date looking further and further away due to the countries volatile situation I made the tough decision of relocating permanently to Barcelona (Spain) withouth finishing my college degree.</p>
+
+    <p> Once in Barcelona my primary goal was to settle down and lay some roots for my future so I looked for any career opportunities that would allow me to fully integrate myself into the city and my new life. After an arduous month filled with doubt over wether or not I had made the right decision I landed a position as a Customer Care Agent in Cooltra motos ,a place that gave me my professional start in the country and where I learned invaluable skills.</p>
+
+    <p> I spent the enxt 3 years working at Cooltra as part as their growing CS team. I joined a team of less than 10 people and by the time I left the company in 2019 we had grown to be more than 40 people!. My day to day consisted on answering phone calls, live chat, and emails to help the customers with the doubts and technical issues.
+    Then as I gained more experience and people skills I was promoted to senior agent and started to help manage the team, build the schedules and conduct the training of the new agents.
+    After 3 years of growth and with my feet firmly planted in Barcelona I decided to look for bigger challenges and ended my time at Cooltra after an opportunity to work at the international company Avis Budget group arose.</p>
+
+    <p>I started to work as a reservations agent in Avis in march of 2019 and had to quickly adapt to working in a new enviorement after 3 years working in the same place. Avis had a much bigger team, more resourcers and their own internal programs that I had to quickly master to succeed in my new rol.</p>
+
+    <p>My time in Avis while short was full of learning opportunities and personal challenges. In Cooltra my goal was customer satisfaction while in Avis my objectives were more sales oriented and I had goals to reach each month. I also had to learn to deal with huge companies and travel agencies, making sure to make the sell, upsell the extras and keep them happy and wanting to come back. In a short time I rose through the rankings and soon was reaching , and exceding, the objectives each month.</p>
+
+    <p> My 6 month contract was extended two times all the way up to 2020 and I was positioned to earn a permanent position in the company but life had other plans. In the early moments of COVID-19 in Spain the company made the decision to downsize and in the process my contract was terminated.</p>
+
+    <p> After 4 years of non stop working I found myself adrift in the middle of a global crisis and decided to make use of this time to reconnect with my programming roots. I learned a lot during my time as a phone operator but I felt like it was time to take on bigger professional challenges.</p>
+
+    <p> At first I did self learning, slowly gaining back the proficiency I had for algorithmic problem solving and starting to learn Ruby as a way to get back into the swing of things. This process was rewarding but I found myself progressing slowly and I reached the conclusion that I needed to "go back to school"</p>
+
+    <p> That's how after months of deliverating I applied to PIMEC's program for Frontend development inparted by Netmind Bit Academy in the frame of the SINGULARS2020 initiative. I started the 480 hour bootcamp in Novemeber 2020 and was introduced into the world of HTML and CSS for the first time. Luckily thanks to my background I managed to pick it up quickly as the classes progressed and was ecstatic by the time we reached JavaScript (somethign that felt a lot closer to "home" for me). By the time the course ended I considered myself proficient in JavaScript, HTML5 and CSS3 and was on my way to start my journey into the VUE framework.</p>
+  </div>
+
+  <div class="right">
+
+  </div>
+
+  <div class="bottom">
+
+  </div>
+</body>
+
+<script>
+  let landingLeft = document.querySelector("#landing-left");
+  landingLeft.addEventListener("click", () => {
+   // document.querySelector(".left").style.transform = "translateX(0%)";
+    document.querySelector(".landing").style.transform = "translateX(100%)"
+   
+  })
+
+  let landingRight = document.querySelector("#landing-right");
+  landingRight.addEventListener("click", () => {
+    document.querySelector(".right").style.transform = "translateX(0)";
+    document.querySelector(".landing").style.transform = "translateX(-100%)"
+  })
+
+  let landingBottom = document.querySelector("#landing-bottom");
+  landingBottom.addEventListener("click", () => {
+    document.querySelector(".landing").style.transform = "translateY(-100%)"
+    document.querySelector(".bottom").style.transform = "translateY(0)";
+  })
+
+  let backgroundReturn = document.querySelector("#background-right");
+  backgroundReturn.addEventListener("click", () => {
+    // document.querySelector(".left").style.transform = "translateX(-100%)";
+    document.querySelector(".landing").style.transform = "translateX(0)";
+  })
+</script>
+</html>
