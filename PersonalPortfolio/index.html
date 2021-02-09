@@ -5,39 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="./style.css">
   <title>Hi! I'm Ricardo</title>
+  <script src="https://kit.fontawesome.com/7039058a7b.js" crossorigin="anonymous"></script>
 </head>
-<body>
-  <div class="landing">
-    <div class="center-circle "> 
-      <img class="center-img" src="./img/circle-cropped.png" alt="">
-      <p id="job-title">FrontEnd Developer</p>
-      <p >rachurion@gmail.com</p>
-      <h1>Hi! I'm Ricardo an anspiring Frontend developer</h1>
-    </div>
 
-    <div class="scroll-left">
-      <div class="square" id="landing-left"></div>
+<body>
+
+  <div class="fullscreen landing">
+
+    <h1>Ricardo Churión </h1>
+    <div id="landing-sub-title">
+      <p id="career">Frontend developer</p>
+      <a href="https://www.linkedin.com/in/rachurion/" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+    </div>
+    
+    <div class="slide-button slide-left" id="slide-left">
+      <div id="landing-left">
+        <img src="./img/landing-arrow.svg" class="full-arrow">
+        <img src="./img/landing-arrow.svg" class="opaque-arrow">
+        <img src="./img/landing-arrow.svg" class="full-arrow">
+        <img src="./img/landing-arrow.svg" class="opaque-arrow">
+      </div>
       <p>What I've done</p>
     </div>
 
-    <div class="scroll-right">
+    <div class="slide-button slide-right" id="slide-right">
       <p>What I know</p>
-      <div class="square" id="landing-right"></div>
+      <div id="landing-right">
+        <img src="./img/landing-arrow.svg" class="opaque-arrow">
+        <img src="./img/landing-arrow.svg" class="full-arrow">
+        <img src="./img/landing-arrow.svg" class="opaque-arrow">
+        <img src="./img/landing-arrow.svg" class="full-arrow">
+      </div>
     </div>
 
-    <div class="scroll-bottom">
+    <div class="slide-button slide-bottom" id="slide-bottom">
       <p>Who I am</p>
-      <div class="square" id="landing-bottom"></div>
+      <div id="landing-bottom">
+        <img src="./img/landing-arrow.svg" class="opaque-arrow">
+        <img src="./img/landing-arrow.svg" class="full-arrow">
+      </div>
     </div>
 
     
   </div>
 
-  <div class="left">
+  <div class="fullscreen left">
 
-    <div class="scroll-right">
-      <p>Back</p>
-      <div class="square" id="background-right"></div>
+    <div class="slide-button slide-right">
+      <img src="./img/arrow.svg" alt="" id="background-return">
     </div>
 
     <p> I started my programming journey in 2011 when I started my studies in the Universidad Simón Bolivar in Caracas, Venezuela. Through my years there I learnt the bascis of logic, discrete mathematics and programming with the help of the top teachers in the country. I started with Pascal and then move on to learn Python. 
@@ -65,39 +80,310 @@
     <p> That's how after months of deliverating I applied to PIMEC's program for Frontend development inparted by Netmind Bit Academy in the frame of the SINGULARS2020 initiative. I started the 480 hour bootcamp in Novemeber 2020 and was introduced into the world of HTML and CSS for the first time. Luckily thanks to my background I managed to pick it up quickly as the classes progressed and was ecstatic by the time we reached JavaScript (somethign that felt a lot closer to "home" for me). By the time the course ended I considered myself proficient in JavaScript, HTML5 and CSS3 and was on my way to start my journey into the VUE framework.</p>
   </div>
 
-  <div class="right">
-
+  <div class="fullscreen right">
+    <div class="slide-button slide-left">
+      <img src="./img/arrow.svg" alt="" id="skills-return">
+    </div>
+    <div class="skills-margin-left"></div>
+    <div class="skills-folder">
+      <div class="folder" id="skills-programming">
+        <div class="folder-back"></div>
+        <div class="folder-cover">
+          <h3>Programming</h3>
+        </div>
+        
+      </div>
+      <div class="card-group">
+        <div class="skill-card">
+          <div id="pattern">
+            <div id="content">
+              <h3>Most proficient at: </h3>
+              <ul>
+                <li>JavaScript</li>
+                <li>HTML5</li>
+                <li>CSS3</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div id="pattern">
+            <div id="content">
+              <h3>In the learning process of:</h3>
+              <ul>
+                <li>Ruby (following the <a href="https://www.theodinproject.com/paths/full-stack-ruby-on-rails?">Odin Project</a>)</li>
+                <li>VUE Framework</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="skills-folder" >
+      <div class="folder" id="skills-languages">
+        <div class="folder-back"></div>
+        <div class="folder-cover">
+          <h3>Languages</h3>
+        </div>
+      </div>
+      <div class="card-group">
+        <div class="skill-card">
+          <div id="pattern">
+            <div id="content">
+              <h3>English</h3>
+              <ul>
+                <li>- Fluent level.</li>
+                <li>- Familiar with technical terms.</li>
+                <li>- +5 years of experience working in english.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div id="pattern">
+            <div id="content">
+              <h3>Spanish</h3>
+              <ul>
+                <li>Native level.</li>
+                <li>Knows more than one dialect.</li>
+                <li>25+ years of experience speaking it.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div id="pattern">
+            <div id="content">
+              <h3>French</h3>
+              <ul>
+                <li>Intermediate level.</li>
+                <li>Certification level B2.</li>
+                <li>2 years of experience working with french native customers. </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="skills-folder" >
+      <div class="folder" id="skills-soft">
+        <div class="folder-back"></div>
+        <div class="folder-cover">
+          <h3>General skills</h3>
+        </div>
+      </div>
+      <div class="card-group">
+        <div class="skill-card">
+          <div id="pattern">
+            <div id="content">
+              <h3>Team work</h3>
+              <ul>
+                <li>Experience working in both big (40+) and small (10-) teams</li>
+                <li>Have helped with team management</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div id="pattern">
+            <div id="content">
+              <h3>Proactive</h3>
+              <ul>
+                <li>Good self learner and researcher.</li>
+                <li>Always look at the bigger picture.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div id="pattern">
+            <div id="content">
+              <h3>Communication</h3>
+              <ul>
+                <li>Empathetic.</li>
+                <li>Knows when to be self sufficient and when to ask for help.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div id="pattern">
+            <div id="content">
+              <h3>Organized</h3>
+              <ul>
+                <li>Always punctual.</li>
+                <li>Respectful of timelines.</li>
+                <li>Experience working with tight schedules.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="bottom">
+  <div class="fullscreen bottom">
+    
+    <div class="slide-button slide-top" style="z-index: 3000;">
+      <img src="./img/arrow.svg" alt="" id="personal-return">
+    </div>
+
+    <img class="center-img" src="./img/circle-cropped.png" alt="">
+
+    <div class="personal-card pc-right-top">
+      <h3>Gaming Facts:</h3>
+      <ul>
+        <li>Favorite genre: Single player adventure.</li>
+        <li>Current favorite game: Hades.</li>
+        <li>Game with most hours: 1720 hours on Dota2.</li>
+        <li>Platform of choice: PC and Switch.</li>
+      </ul>
+    </div>
+    <div class="personal-card pc-right-bottom">
+      <h3>Food Facts:</h3>
+      <ul>
+        <li>Favorite dish: Lentejas.</li>
+        <li>Signature dish: Keylime Pie</li>
+        <li>Proficiency as a cook: Intermidiate. </li>
+        <li>Kavorite kitchen appliance: My juicer.</li>
+      </ul>
+    </div>
+    <div class="personal-card pc-middle-bottom">
+      <h3>Book Facts:</h3>
+      <ul>
+        <li>Favorite genre: Police mistery.</li>
+        <li>Favorite author: Agatha Christie.</li>
+        <li>Current favorite book: "Battle royale" by Koushun Takami. </li>
+        <li>Most reread book: "And Then There Were None" by Agatha Christie. </li>
+      </ul>
+    </div>
+    <div class="personal-card pc-left-bottom">
+      <h3>Movies and TV Facts:</h3>
+      <ul>
+        <li>Favorite genre: Musicals.</li>
+        <li>Favorite movie: RENT.</li>
+        <li>Favorite TV show: Community </li>
+        <li>Streaming platform of choice: NETFLIX </li>
+      </ul>
+    </div>
+    <div class="personal-card pc-left-top">
+      <h3>Music Facts:</h3>
+      <ul>
+        <li>Favorite genres: Pop and Showtunes.</li>
+        <li>Favorite artists: Tessa Violet (EN), El cuarteto de Nos (ES), Stromae (FR).</li>
+        <li>Current favorite Album: "Villains" by Emma Blackery. </li>
+      </ul>
+    </div>
+    <div class="personal-card pc-middle-top">
+      <h3>Travel Facts:</h3>
+      <ul>
+        <li>Number of countries visited: 8.</li>
+        <li>Favorite traveling activity: Walking around a new place.</li>
+        <li>Favorite city I've visited: Venice. </li>
+        <li>Dream destination: Tokyo.</li>
+      </ul>
+    </div>
+
+    <ul class="circle small">
+      <li id="gaming-title"><div class="text"><p class="personal-title " >Gaming</p></div></li>
+      <li id="food-title"><div class="text"><p class="personal-title pt-flip">Food</p></div></li>
+      <li id="books-title"><div class="text"><p class="personal-title pt-flip">Books</p></div></li>
+      <li id="movies-title"><div class="text "><p class="personal-title pt-flip">Movies / TV</p></div></li>
+      <li id="music-title"><div class="text"><p class="personal-title ">Music</p> </div></li>
+      <li id="travel-title"><div class="text"><p class="personal-title ">Travel</p> </div></li>
+    </ul>
+
 
   </div>
 </body>
 
 <script>
-  let landingLeft = document.querySelector("#landing-left");
-  landingLeft.addEventListener("click", () => {
-   // document.querySelector(".left").style.transform = "translateX(0%)";
+  setInterval(() => {
+    let fullGroup =  document.querySelectorAll(".full-arrow");
+    let opaqueGroup = document.querySelectorAll(".opaque-arrow");
+    opaqueGroup.forEach(element => {
+      element.classList.remove("opaque-arrow");
+      element.classList.add("full-arrow");
+      
+    });
+    fullGroup.forEach(element => {
+      element.classList.remove("full-arrow");
+      element.classList.add("opaque-arrow");
+    });
+
+    
+  }, 500);
+
+  let landingLeftHover = document.querySelector("#slide-left");
+  landingLeftHover.addEventListener("mouseover", () => { 
+    document.querySelector(".left").style.zIndex = "100";
+    document.querySelector(".right").style.zIndex = "1";
+    document.querySelector(".bottom").style.zIndex = "1";
+  })
+  let landingLeftSlide = document.querySelector("#landing-left");
+  landingLeftSlide.addEventListener("click", () => {
     document.querySelector(".landing").style.transform = "translateX(100%)"
-   
   })
 
-  let landingRight = document.querySelector("#landing-right");
-  landingRight.addEventListener("click", () => {
-    document.querySelector(".right").style.transform = "translateX(0)";
+  let landingRightHover = document.querySelector("#slide-right");
+  landingRightHover.addEventListener("mouseover", () => { 
+    document.querySelector(".right").style.zIndex = "100";
+    document.querySelector(".left").style.zIndex = "1";
+    document.querySelector(".bottom").style.zIndex = "1";
+  })
+  let landingRightSlide = document.querySelector("#landing-right");
+  landingRightSlide.addEventListener("click", () => {
     document.querySelector(".landing").style.transform = "translateX(-100%)"
   })
-
-  let landingBottom = document.querySelector("#landing-bottom");
-  landingBottom.addEventListener("click", () => {
-    document.querySelector(".landing").style.transform = "translateY(-100%)"
-    document.querySelector(".bottom").style.transform = "translateY(0)";
+  let landingBottomHover = document.querySelector("#slide-bottom");
+  landingBottomHover.addEventListener("mouseover", () => { 
+    document.querySelector(".bottom").style.zIndex = "100";
+    document.querySelector(".right").style.zIndex = "1";
+    document.querySelector(".left").style.zIndex = "1";
+  })
+  let landingBottomSlide = document.querySelector("#landing-bottom");
+  landingBottomSlide.addEventListener("click", () => {
+    document.querySelector(".landing").style.transform = "translateY(-100%)"; 
+    let circleHeight =  document.querySelector(".circle").clientHeight;
+    console.log(circleHeight);
+    document.querySelector(".circle").style.width = circleHeight + "px";
   })
 
-  let backgroundReturn = document.querySelector("#background-right");
+  let backgroundReturn = document.querySelector("#background-return");
   backgroundReturn.addEventListener("click", () => {
-    // document.querySelector(".left").style.transform = "translateX(-100%)";
     document.querySelector(".landing").style.transform = "translateX(0)";
+    setTimeout(() => {
+      document.querySelector(".right").style.zIndex = "100";
+      document.querySelector(".left").style.zIndex = "1";
+      document.querySelector(".bottom").style.zIndex = "1"; }, 1500)
+  })
+
+  let skillsReturn = document.querySelector("#skills-return");
+  skillsReturn.addEventListener("click", () => {
+    document.querySelector(".landing").style.transform = "translateX(0)";
+    setTimeout(() => {
+      document.querySelector(".left").style.zIndex = "100";
+      document.querySelector(".right").style.zIndex = "1";
+      document.querySelector(".bottom").style.zIndex = "1";}, 1500)
+    
+  })
+
+  let personalReturn = document.querySelector("#personal-return");
+  personalReturn.addEventListener("click", () => {
+    document.querySelector(".landing").style.transform = "translateY(0)";
+    
+  })
+
+  let programmingFolder = document.querySelector("#skills-programming");
+  programmingFolder.addEventListener("click", () => {
+    document.querySelector("#skills-programming + .card-group").style.transform = "translateX(300px)";
+    document.querySelector(".folder-cover").style.transform = "rotateX(30deg)"
+  })
+
+  let gamingButton = document.querySelector(".gaming");
+  gamingButton.addEventListener("click", () => {
+    document.querySelector(".pc-right-top").style.opacity = "1";
+    document.querySelector(".circle li:nth-child(1)").style.backgroundColor = "red";
   })
 </script>
 </html>

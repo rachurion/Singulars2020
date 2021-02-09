@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .digimons {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .digimon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 2px solid black;
+      width: 500px;
+    }
+  </style>
+</head>
+<body>
+  <div class="digimons">
+    <img src="" alt="">
+  </div>
+
+  <script>
+    let digimons = document.querySelector(".digimons");
+    let arrayD = [];
+
+    fetch("https://digimon-api.vercel.app/api/digimon/")
+      .then(res => res.json())
+      .then((res) => {
+        console.log(res);
+        res.forEach(digimon => {
+          arrayD.push(digimon);
+        }); 
+        arrayD.sort(function(a, b){
+          if(a.name < b.name) { return -1; }
+          if(a.name > b.name) { return 1; }
+          return 0;
+        })
+        arrayD.forEach(element => {
+          digimons.innerHTML += `<div class="digimon"><h2>${element.name}</h2><img src="${element.img}" alt=""><p>(${element.level})</p></div>` ;
+        });
+      })
+  </script>
+</body>
+</html>
