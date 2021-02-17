@@ -78,7 +78,7 @@ a:hover {
 
 .right {
   padding-top: 20px;
-  z-index: 1000;
+  z-index: 1;
   background-color: lightslategray;
   justify-content: center;
   align-items: left;

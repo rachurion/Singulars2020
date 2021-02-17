@@ -2,28 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
   <style>
-    .contact {
-      padding: 15px;
-      display: flex;
-      flex-direction: column;
-      border: 1px solid black;
-      width: 500px;
-    }
-
-    .names {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
-
     .square {
+      display: none;
       height: 20px;
       width: 20px;
       margin-left: 10px ;
@@ -36,19 +21,24 @@
     .red {
       background-color: red;
     }
+
+    .pair {
+      display: flex;
+
+    }
   </style>
 </head>
 <body>
 
-  <div id="app">
-    {{ msg }}
-  </div>
-
   <div class="contact">
     <div class="names">
-      <input type="text" placeholder="name" id="fname" name="fname" v-model="nameT">
-      <div class="square green" id="name-check" v-if="isName"></div>
-      <div class="square red" id="name-check" v-else></div>
+      <div class="pair">
+        
+        <input type="text" placeholder="name" id="fname" name="fname" v-model="nameT" @change = "isString(nameT)">
+        <div class="square green" id="name-check" v-if="isName"></div>
+        <div class="square red" id="name-check" v-else></div>
+
+      </div>
       <input type="text" placeholder="last name" id="lname" name="lname" v-model="lastNameT">
     </div>
     <input type="text" placeholder="address" id="address" name="address" v-model="addressT">
@@ -59,16 +49,10 @@
     <p> {{name}} {{lastName}} {{tlf}}</p>
     <p> {{address}}</p>
   </div>
- 
+
 
   <script>
-    var app = new Vue({
-      el: '#app',
-      data: {
-        msg: 'Hello Vue!'
-      }
-    })
-
+  
     var form = new  Vue({
       el: `.contact`,
       data : {
@@ -76,11 +60,11 @@
         lastName: "",
         tlf: "",
         address: "",
-        nameT: "hola",
+        nameT: "",
         lastNameT: "",
         tlfT: "",
         addressT: "",
-        isName: isString(this.nameT),
+        isName: true,
 
       },
       methods : {
@@ -96,16 +80,25 @@
           console.log(this.lastNameT);
           console.log(this.addressT);
           console.log(this.tlfT);
-        }
+        },
+
+        isString: function(stringToCheck){
+         
+          if (this.nameT == "")document.querySelector(".square").style.display = "none";
+          else  document.querySelector(".square").style.display = "inline-block";
+          this.isName = true;
+          stringToCheck = stringToCheck.toLowerCase().split("");
+          stringToCheck.forEach(element => {
+            if (!(/^[a-zA-Z]*$/.test(element))) {
+              this.isName = false;
+              return
+            }
+          });
+    }
       
       }
     })
-
-    function isString(string) {
-      string = string.toLowerCase().split("");
-      if (string.includes(1,2,3,4,5,6,7,8,9,0)) return false;
-      else return true
-    }
+   
 
   </script>
 </body>
