@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Singulars twitter</title>
+  <style>
+    body {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between
+    }
+
+    body h1 {
+      width: 100%;
+      text-align: center;
+      
+    }
+    .feed {
+      display: flex;
+      flex-direction: column;
+      width: 45%;
+      height: 700px;
+      border: 1px black solid;
+      margin: 5px;
+      overflow: auto;
+      
+    }
+
+    .feed h2 {
+      text-align: center;
+      border-bottom: 1px blue solid;
+      position: sticky;
+      top: 0;
+      background-color: white;
+      margin: 0;
+    }
+    .send-tweet {
+      display: flex;
+      flex-direction: column;
+      width: 45%;
+    }
+
+    .tweet {
+      color: green;
+      border-bottom: 1px red solid;
+      padding-left: 25px;
+    }
+
+    .user {
+      color: purple;
+      margin: 0;
+    }
+
+    .display {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>Singulars2020 Twitter</h1>
+  <div class="feed">
+    <h2>Feed</h2>
+    <div class="display">
+      <div class="tweets"></div>
+    </div>
+  </div>
+  
+  <div class="send-tweet">
+    <label for="user">Usuario</label>
+    <input type="text" id="user" name="user" placeholder="user">
+
+    <label for="tweet">Mensaje</label>
+
+    <textarea id="tweet" name="tweet" rows="20" cols="50" placeholder="mensaje"></textarea>
+    <div id="buttons">
+      <button id="send">Enviar</button>
+      <button id="refresh">Refrescar</button>
+    </div>
+  </div>
+
+  <script>
+    const database ="https://ricardosingularstest-default-rtdb.firebaseio.com/";
+    let tweets = document.querySelector(".tweets");
+    function write(user, message, tweets) {
+      fetch(database + "messages.json", {
+                    method: 'POST',
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({"user": user,
+                    "message": message})
+                })
+                .then(res => res.json())
+                .then(res => console.log("sent!"));
+                tweets.innerHTML += `<h3 class="user">@${user}</h3><p class= "tweet">${message}</p>`;
+                
+    }
+
+    function getTweets(tweets) {
+      tweets.innerHTML = "";
+      fetch(database + "messages.json")
+                .then(res => res.json())
+                .then(res =>  {
+                  for (const id in res) {
+                    tweets.innerHTML += `<h3 class="user">@${res[id].user}</h3><p class= "tweet">${res[id].message}</p>`;
+                  }
+                });
+    }
+
+    
+    let sendButton =  document.querySelector("#send");
+    sendButton.addEventListener("click", () => {
+      let user = document.querySelector("#user");
+      let message = document.querySelector("#tweet");
+      if (user.value && message.value) {
+        write(user.value, message.value, tweets);
+        user.value = "";
+        message.value = "";
+      }
+    })
+    let refreshButton = document.querySelector("#refresh");
+    refreshButton.addEventListener("click", () => {
+      getTweets(tweets);
+    })
+
+    
+    
+
+  </script>
+</body>
+</html>

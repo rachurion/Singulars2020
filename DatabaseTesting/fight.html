@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fighting game</title>
+  <style>
+    .stat-select {
+      display: flex;
+      padding: 10px;
+      margin: 5px;
+      flex-direction: column;
+      width: 300px;
+      border: 1px solid black;
+    }
+
+    .stat-select button , .stat-select select{
+      width: 50%;
+    }
+
+    .character-create{
+      margin-top: 10px;
+      display: none;
+      align-items: center;
+      flex-wrap: wrap;
+      border: 2px black solid;
+      padding: 10px;
+      width: 300px;
+    }
+
+    .char-list{
+      display: none;
+      
+    }
+
+    .character-create #name {
+      display: inline-block;
+    }
+
+    .char-card {
+      border: 2px solid black;
+      width: 200px;
+      margin: 5px;
+    }
+
+    .name-change {
+      display: none;
+      margin: 15px;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+    
+    #pick-char {
+      margin-bottom: 10px;
+    }
+
+    #delete-char{
+      float: right;
+    }
+
+    .arena{
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform:  translate(-50%, -50%);
+      height: 500px;
+      width: 700px;
+      border: 3px solid blue;
+      background-color: lightgoldenrodyellow;
+
+    }
+
+    .blue-player {
+      background-color: lightblue;
+    }
+
+    .green-player {
+      background-color: lightgreen;
+    }
+
+    .fighter {
+      margin-left: 25px;
+      margin-right: 25px;
+      margin-top: 50px ;
+      width: 300px;
+      height: 300px;
+      border: 2px solid black;
+      border-radius: 20%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      transition: 0.5s;
+    }
+
+    .health {
+      font-size: xx-large;
+      font-weight: bold;
+    }
+
+    .fightzone {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .show {
+      display: flex;
+  
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <div class="arena">
+
+  </div>
+
+  <div class="top-buttons">
+    <h2>Welcome player!</h2>
+    <button id="create">Create a character</button>
+    <button id="char-list">Character list</button>
+  </div>
+  
+  <div class="character-create ">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="character name">
+    <div class="stat-select">
+      <div id="top-stat">
+        <button id="dice-top">Roll the dice!</button>
+        <p id="top-value"></p>
+      </div>
+      <label for="stats">Choose a stat to give this value:</label>
+      <select name="stats" id="stats-top" disabled>
+        <option value="hp">HP</option>
+        <option value="strength">Strenght</option>
+        <option value="speed">Speed</option>
+      </select>
+    </div>
+    <div class="stat-select">
+      <div id="mid-stat">
+        <button id="dice-mid">Roll the dice!</button>
+        <p id="mid-value"></p>
+      </div>
+      <label for="stats">Choose a stat to give this value:</label>
+      <select name="stats" id="stats-mid" disabled>
+        <option value="hp">HP</option>
+        <option value="strength">Strenght</option>
+        <option value="speed">Speed</option>
+      </select>
+    </div>
+    <div class="stat-select">
+      <div id="bot-stat">
+        <button id="dice-bot">Roll the dice!</button>
+        <p id="bot-value"></p>
+      </div>
+      <label for="stats">Choose a stat to give this value:</label>
+      <select name="stats" id="stats-bot" disabled>
+        <option value="hp">HP</option>
+        <option value="strength">Strenght</option>
+        <option value="speed">Speed</option>
+      </select>
+    </div>
+    <button id="submit-char" disabled>Submit</button>
+  </div>
+
+  <div class="char-list"></div>
+  <script src="./fight.js"></script>
+  <script>
+    const database ="https://ricardosingularstest-default-rtdb.firebaseio.com/";
+    var playerCharacter;
+    var playerCharacterId;
+    var enemy;
+    var enemyID;
+    let createChar =  document.querySelector("#create");
+    createChar.addEventListener("click", () => {
+      document.querySelector(".character-create").classList.add("show");
+      document.querySelector(".char-list").classList.remove("show");
+    })
+    let newChar = {name:"", hp:"", strength:"", speed:""};
+    let statsTop = document.querySelector("#stats-top");
+    let statsMid = document.querySelector("#stats-mid");
+    let statsBot = document.querySelector("#stats-bot");
+    let submitChar = document.querySelector("#submit-char");
+    let diceTop =  document.querySelector("#dice-top");
+    diceTop.addEventListener("click", () => {
+      let number = Math.floor(Math.random() * 13) +1; 
+      document.querySelector("#top-value").value = number;
+      document.querySelector("#top-value").innerHTML += `You rolled a ${number}!`;
+      diceTop.disabled = true;
+      statsTop.disabled = false;
+
+      if (!(statsTop.disabled) & !(statsMid.disabled) & !(statsBot.disabled)) submitChar.disabled = false;
+    })
+    let diceMid =  document.querySelector("#dice-mid");
+    diceMid.addEventListener("click", () => {
+      console.log("entered button")
+      let number = Math.floor(Math.random() * 13) +1; 
+      document.querySelector("#mid-value").value = number;
+      document.querySelector("#mid-value").innerHTML += `You rolled a ${number}!`;
+      diceMid.disabled = true;
+      statsMid.disabled = false;
+      if (!(statsTop.disabled) & !(statsMid.disabled) & !(statsBot.disabled)) submitChar.disabled = false;
+    })
+    let diceBot =  document.querySelector("#dice-bot");
+    diceBot.addEventListener("click", () => {
+      console.log("entered button")
+      let number = Math.floor(Math.random() * 13) +1; 
+      document.querySelector("#bot-value").value = number;
+      document.querySelector("#bot-value").innerHTML += `You rolled a ${number}!`;
+      diceBot.disabled = true;
+      statsBot.disabled = false;
+      if (!(statsTop.disabled) & !(statsMid.disabled) & !(statsBot.disabled)) submitChar.disabled = false;
+    })
+
+    submitChar.addEventListener("click", () =>{
+      let topSelect =  document.querySelector("#stats-top");
+      let midSelect =  document.querySelector("#stats-mid");
+      let botSelect =  document.querySelector("#stats-bot");
+      if (document.querySelector("#name").value) newChar.name = document.querySelector("#name").value;
+      else newChar.name ="NPC";
+      newChar.hp = 10 * document.querySelector(`#${assingStat("hp",topSelect,midSelect,botSelect)}-value`).value;
+      newChar.strength = 2 * document.querySelector(`#${assingStat("strength",topSelect,midSelect,botSelect)}-value`).value;
+      newChar.speed = document.querySelector(`#${assingStat("speed",topSelect,midSelect,botSelect)}-value`).value;
+      newChar.ties = 0;
+      newChar.wins = 0;
+      newChar.loses = 0;
+      fetch(database + "characters.json", {
+                    method: 'POST',
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(newChar)
+                })
+    })
+
+    let listChar = document.querySelector("#char-list");
+    listChar.addEventListener("click", () => {
+      let charList = document.querySelector(".char-list");
+      document.querySelector(".character-create").classList.remove("show");
+      charList.classList.add("show");
+      charList.innerHTML = "";
+      let charArray = [];
+      fetch(database + "characters.json")
+                .then(res => res.json())
+                .then(res =>  {
+                  for (const id in res) {
+                    charArray.push(id);
+                    charList.innerHTML += `<div class="char-card" data-id="${id}"> 
+                                            <h3 class="char-name">${res[id].name}</h3>
+                                            <button id="change-name">Change name</button>
+                                              <div class="name-change">
+                                                <label for="new-name">New name:</label>
+                                                <input type="text" id="new-name" name="name" placeholder="New name">
+                                                <button id="submit-name">Save name</button>
+                                              </div>
+                                            <p class= "char-stat">HP:${res[id].hp}</p>
+                                            <p class= "char-stat">Strength:${res[id].strength}</p>
+                                            <p class= "char-stat">Speed:${res[id].speed}</p>
+                                            <p class= "char-stat">Wins:${res[id].wins}</p>
+                                            <p class= "char-stat">Ties:${res[id].ties}</p>
+                                            <p class= "char-stat">Loses:${res[id].loses}</p>
+                                            <button id="pick-char">Pick character</button>
+                                            <button id="delete-char">Delete character</button>
+                                            </div>`;
+                  }
+                  let deleteChar = document.querySelectorAll("#delete-char");
+                  deleteChar.forEach(element => {
+                    element.addEventListener("click", () => {
+                      let divDelete = element.closest("div");
+                      let idDelete =  divDelete.getAttribute('data-id');
+                      divDelete.remove();
+                      fetch(database + "characters/" + idDelete + ".json", {
+                        method: 'DELETE',
+                        headers: {
+                          'Content-Type': 'application/json'
+                        },
+                        body: null  
+                      })
+                    })
+                  });
+
+                  let changeName = document.querySelectorAll("#change-name");
+                  changeName.forEach(element => {
+                    element.addEventListener("click", () => {
+                      let divChange = element.closest("div");
+                      let idChange =  divChange.getAttribute('data-id');
+                      let nameEdit = divChange.querySelector(".name-change");
+                      nameEdit.classList.add("show");
+                      let submitName =  nameEdit.querySelector("#submit-name");
+                      submitName.addEventListener("click", () => {
+                        let newName = nameEdit.querySelector("#new-name").value;
+                        divChange.querySelector(".char-name").innerHTML = newName;
+                        fetch(database + "characters/" + idChange + ".json", { 
+                        method: "PATCH",
+                        headers: {
+                            "Content-Type" : "application/json"
+                          },
+                        body: JSON.stringify(
+                          {
+                            "name": `${newName}`
+                          }
+                        )
+                        })
+                      .then(nameEdit.classList.remove("show"));
+                      })
+                      
+                    })
+                  })
+
+                  let pickChar = document.querySelectorAll("#pick-char");
+                  pickChar.forEach(element => {
+                  element.addEventListener("click", () => {
+                    playerCharacterId = element.closest("div").getAttribute("data-id");
+                    let index = charArray.indexOf(playerCharacterId);
+                    charArray.splice(index, 1);
+                    enemyId = charArray[Math.floor((Math.random()*charArray.length))]
+                    fetch(database + "characters/" + enemyId + ".json")
+                    .then(res => res.json())
+                    .then(data =>{
+                      enemy = data;
+                      fetch(database + "characters/" + playerCharacterId + ".json")
+                          .then(res => res.json())
+                          .then(data =>{
+                            playerCharacter = data;
+                            characterFight()
+                          } )
+                    } )    
+                  })
+                })
+                });            
+    })
+
+  
+
+  </script>
+</body>
+</html>

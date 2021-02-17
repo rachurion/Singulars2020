@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+  <style>
+    .contact {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid black;
+      width: 500px;
+    }
+
+    .names {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="app">
+    {{ msg }}
+  </div>
+
+  <div class="contact">
+    <div class="names">
+      <input type="text" placeholder="name" id="fname" name="fname" v-model="nameT">
+      <input type="text" placeholder="last name" id="lname" name="lname" v-model="lastNameT">
+    </div>
+    <input type="text" placeholder="address" id="address" name="address" v-model="addressT">
+    <input type="text" placeholder="phone" id="phone" name="phone" v-model="tlfT">
+  
+    <button v-on:click="print(); printConsole()"> Submit </button>
+
+    <p> {{name}} {{lastName}} {{tlf}}</p>
+    <p> {{address}}</p>
+  </div>
+ 
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        msg: 'Hello Vue!'
+      }
+    })
+
+    var form = new  Vue({
+      el: `.contact`,
+      data : {
+        name: "",
+        lastName: "",
+        tlf: "",
+        address: "",
+        nameT: "",
+        lastNameT: "",
+        tlfT: "",
+        addressT: "",
+
+      },
+      methods : {
+        print : function() {
+          this.name =   this.nameT;
+          this.lastName = this.lastNameT;
+          this.address = this.addressT;
+          this.tlf = `(${this.tlfT})`;
+        },
+
+        printConsole: function() {
+          console.log(this.nameT);
+          console.log(this.lastNameT);
+          console.log(this.addressT);
+          console.log(this.tlfT);
+        }
+      
+      }
+    })
+
+  </script>
+</body>
+</html>
